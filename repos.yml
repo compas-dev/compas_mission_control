@@ -157,19 +157,6 @@ repos:
     owner: blockresearchgroup
     category: tooling
     pypi: compas_rui
-  # Rhino plugins — distributed via Yak, not PyPI (no pypi key).
-  - name: compas-RV
-    owner: blockresearchgroup
-    category: structures
-  - name: compas-FoFin
-    owner: blockresearchgroup
-    category: structures
-  - name: compas-IGS
-    owner: blockresearchgroup
-    category: structures
-  - name: compas-Masonry
-    owner: blockresearchgroup
-    category: structures
 
   # =======================================================================
   # gramaziokohler — timber, fabrication & COMPAS extensions
@@ -213,6 +200,23 @@ repos:
   - name: antikythera         # process manager built on the COMPAS stack; PyPI name is ambiguous
     owner: gramaziokohler
     category: apps
+    tier: apps
+  # Rhino plugins — distributed via Yak, not PyPI (no pypi key).
+  - name: compas-RV
+    owner: blockresearchgroup
+    category: structures
+    tier: apps
+  - name: compas-FoFin
+    owner: blockresearchgroup
+    category: structures
+    tier: apps
+  - name: compas-IGS
+    owner: blockresearchgroup
+    category: structures
+    tier: apps
+  - name: compas-Masonry
+    owner: blockresearchgroup
+    category: structures
     tier: apps
 
   # ---- archived (kept for historical migration signal) ------------------
