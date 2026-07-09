@@ -2,7 +2,7 @@
   "date": "2026-07-09",
   "repos": {
     "compas": {
-      "staleness": "aging",
+      "staleness": "fresh",
       "ci": "passing",
       "open_issues": 101,
       "open_prs": 17,
@@ -69,7 +69,7 @@
       "staleness": "fresh",
       "ci": "passing",
       "open_issues": 68,
-      "open_prs": 15,
+      "open_prs": 14,
       "compas_major_floor": 2,
       "features_adopted": 6
     },
@@ -84,8 +84,8 @@
     "compas_brep": {
       "staleness": "fresh",
       "ci": "passing",
-      "open_issues": 1,
-      "open_prs": 1,
+      "open_issues": 0,
+      "open_prs": 0,
       "compas_major_floor": 2,
       "features_adopted": 7
     },
@@ -402,7 +402,7 @@
       "features_adopted": 4
     },
     "compas_pb": {
-      "staleness": "aging",
+      "staleness": "fresh",
       "ci": "passing",
       "open_issues": 11,
       "open_prs": 1,
