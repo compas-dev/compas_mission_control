@@ -1,0 +1,81 @@
+name: Build & Deploy
+
+# Collects ecosystem data (GitHub + PyPI), builds the static dashboard, and
+# deploys it to GitHub Pages. See SPEC.md §9.
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # nightly, 02:00 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+# Pages deploy + committing the history snapshot back to the repo.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never let two runs fight over Pages / the history commit.
+concurrency:
+  group: mission-control-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install collector dependencies
+        run: pip install PyYAML packaging
+
+      - name: Collect data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python -m collector --root .
+
+      - name: Commit history snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data-history site/public/data.json
+          if git diff --quiet --cached; then
+            echo "No data changes to commit."
+          else
+            git commit -m "chore: data snapshot $(date -u +%Y-%m-%d) [skip ci]"
+            git push
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Build site
+        run: |
+          npm --prefix site ci
+          npm --prefix site run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,134 @@
+"""Minimal GitHub REST API client (stdlib only, fail-soft)."""
+
+from __future__ import annotations
+
+import json
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from typing import Any
+from typing import Optional
+
+API = "https://api.github.com"
+
+
+class GitHub:
+    def __init__(self, token: Optional[str] = None):
+        self.token = token
+        self.warnings: list[str] = []
+
+    def _headers(self) -> dict[str, str]:
+        headers = {
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "compas-mission-control",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+        if self.token:
+            headers["Authorization"] = f"Bearer {self.token}"
+        return headers
+
+    def get(self, path: str, params: Optional[dict] = None, retries: int = 3) -> Optional[Any]:
+        """GET a path (relative to the API root or absolute). Returns parsed JSON or None."""
+        url = path if path.startswith("http") else f"{API}{path}"
+        if params:
+            url = f"{url}?{urllib.parse.urlencode(params)}"
+        for attempt in range(retries):
+            req = urllib.request.Request(url, headers=self._headers())
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    return json.loads(resp.read().decode("utf-8"))
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:
+                    return None
+                if exc.code in (403, 429):
+                    # rate limited — respect reset if provided, else back off
+                    reset = exc.headers.get("X-RateLimit-Reset")
+                    wait = 60
+                    if reset:
+                        wait = max(1, int(reset) - int(time.time())) + 1
+                    wait = min(wait, 90)
+                    if attempt < retries - 1:
+                        time.sleep(wait)
+                        continue
+                self.warnings.append(f"GET {url} -> HTTP {exc.code}")
+                return None
+            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+                if attempt < retries - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                self.warnings.append(f"GET {url} -> {exc}")
+                return None
+        return None
+
+    # -- convenience wrappers ------------------------------------------------
+
+    def repo(self, owner: str, name: str) -> Optional[dict]:
+        return self.get(f"/repos/{owner}/{name}")
+
+    def latest_release(self, owner: str, name: str) -> Optional[dict]:
+        return self.get(f"/repos/{owner}/{name}/releases/latest")
+
+    def file_text(self, owner: str, name: str, path: str, ref: Optional[str] = None) -> Optional[str]:
+        """Fetch and decode a text file from a repo, or None if missing."""
+        import base64
+
+        params = {"ref": ref} if ref else None
+        data = self.get(f"/repos/{owner}/{name}/contents/{path}", params=params)
+        if not data or "content" not in data:
+            return None
+        try:
+            return base64.b64decode(data["content"]).decode("utf-8")
+        except Exception:  # noqa: BLE001
+            return None
+
+    def dir_entries(self, owner: str, name: str, path: str, ref: Optional[str] = None) -> list[str]:
+        params = {"ref": ref} if ref else None
+        data = self.get(f"/repos/{owner}/{name}/contents/{path}", params=params)
+        if isinstance(data, list):
+            return [e.get("name", "") for e in data]
+        return []
+
+    def ci_status(self, owner: str, name: str, branch: str) -> str:
+        """passing | failing | none, based on the latest completed run on the branch."""
+        data = self.get(
+            f"/repos/{owner}/{name}/actions/runs",
+            params={"branch": branch, "status": "completed", "per_page": 1},
+        )
+        runs = (data or {}).get("workflow_runs") or []
+        if not runs:
+            return "none"
+        return "passing" if runs[0].get("conclusion") == "success" else "failing"
+
+    def issue_pr_counts(self, owner: str, name: str) -> dict:
+        """Separate open issues from open PRs, plus oldest open issue age (days)."""
+        import datetime
+
+        def count(query: str) -> int:
+            data = self.get("/search/issues", params={"q": query, "per_page": 1})
+            return int((data or {}).get("total_count", 0)) if data is not None else 0
+
+        open_prs = count(f"repo:{owner}/{name} is:pr is:open")
+        open_issues = count(f"repo:{owner}/{name} is:issue is:open")
+
+        oldest_days = None
+        data = self.get(
+            "/search/issues",
+            params={"q": f"repo:{owner}/{name} is:issue is:open", "sort": "created", "order": "asc", "per_page": 1},
+        )
+        items = (data or {}).get("items") or []
+        if items:
+            created = items[0].get("created_at")
+            if created:
+                dt = datetime.datetime.fromisoformat(created.replace("Z", "+00:00"))
+                oldest_days = (datetime.datetime.now(datetime.timezone.utc) - dt).days
+
+        return {"open_issues": open_issues, "open_prs": open_prs, "oldest_open_issue_age_days": oldest_days}
+
+    def search_code(self, owner: str, name: str, pattern: str) -> Optional[bool]:
+        """True/False if a code pattern appears in the repo, or None on error."""
+        q = f'"{pattern}" repo:{owner}/{name}'
+        data = self.get("/search/code", params={"q": q, "per_page": 1})
+        if data is None:
+            return None
+        return int(data.get("total_count", 0)) > 0

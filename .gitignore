@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Vite
+node_modules/
+site/dist/
+
+# OS / editor
+.DS_Store
+
+# Note: site/public/data.json IS committed — it doubles as the sample the
+# frontend renders against for local dev without running the collector.

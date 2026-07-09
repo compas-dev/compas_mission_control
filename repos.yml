@@ -1,0 +1,226 @@
+# Curated list of repositories tracked by COMPAS Mission Control.
+# See SPEC.md §4.1 for the schema. Edit deliberately — this is not auto-discovered.
+
+defaults:
+  owner: compas-dev
+  branch: main
+
+repos:
+  # ---- core -------------------------------------------------------------
+  - name: compas
+    category: core
+    role: core          # the package everyone else pins; drives the matrix
+    pypi: compas
+
+  # ---- fabrication / robots --------------------------------------------
+  - name: compas_fab
+    category: fabrication
+    pypi: compas_fab
+  - name: compas_robots
+    category: fabrication
+    pypi: compas_robots
+  - name: compas_slicer
+    category: fabrication
+    pypi: compas_slicer
+  - name: compas_eve
+    category: fabrication
+    pypi: compas_eve
+  - name: compas_xr
+    category: xr
+    pypi: compas_xr
+  - name: compas_rrc
+    owner: compas-rrc      # lives in its own org, not compas-dev
+    category: fabrication
+    pypi: compas_rrc
+
+  # ---- geometry / CAD ---------------------------------------------------
+  - name: compas_occ
+    category: geometry
+    pypi: compas_occ
+  - name: compas_cgal
+    category: geometry
+    pypi: compas_cgal
+  - name: compas_libigl
+    category: geometry
+    pypi: compas_libigl
+  - name: compas_nurbs
+    category: geometry
+    pypi: compas_nurbs
+  - name: compas_gmsh
+    category: geometry
+    pypi: compas_gmsh
+  - name: compas_triangle
+    category: geometry
+    pypi: compas_triangle
+  - name: compas_shapeop
+    category: geometry
+    pypi: compas_shapeop
+  - name: compas_ifc
+    category: geometry
+    pypi: compas_ifc
+
+  # ---- fea --------------------------------------------------------------
+  - name: compas_fea2
+    category: fea
+    pypi: compas_fea2
+
+  # ---- visualization ----------------------------------------------------
+  - name: compas_viewer
+    category: viz
+    pypi: compas_viewer
+  - name: compas_plotters
+    category: viz
+    pypi: compas_plotters
+  - name: compas_notebook
+    category: viz
+    pypi: compas_notebook
+
+  # ---- tooling / templates ---------------------------------------------
+  - name: compas_invocations2
+    category: tooling
+    pypi: compas_invocations2
+  - name: compas_package_template
+    category: template
+  - name: sphinx_compas2_theme
+    category: tooling
+    pypi: sphinx_compas2_theme
+
+  # ---- meta -------------------------------------------------------------
+  - name: compas_framework
+    category: core
+    pypi: compas_framework
+
+  # =======================================================================
+  # blockresearchgroup — structural design, form finding & graphic statics
+  # =======================================================================
+  - name: compas_ags
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_ags
+  - name: compas_tna
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_tna
+  - name: compas_tno
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_tno
+  - name: compas_cra
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_cra
+  - name: compas_3gs
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_3gs
+  - name: compas_dr
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_dr
+  - name: compas_fd
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_fd
+  - name: compas_rbe
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_rbe
+  - name: compas_dem
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_dem
+  - name: compas_assembly
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_assembly
+  - name: compas_model
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_model
+  - name: compas_bender
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_bender
+  - name: compas_lmgc90
+    owner: blockresearchgroup
+    category: structures
+    pypi: compas_lmgc90
+  - name: compas_skeleton
+    owner: blockresearchgroup
+    category: geometry
+    pypi: compas_skeleton
+  - name: compas_session
+    owner: blockresearchgroup
+    category: tooling
+    pypi: compas_session
+  - name: compas_rui
+    owner: blockresearchgroup
+    category: tooling
+    pypi: compas_rui
+  # Rhino plugins — distributed via Yak, not PyPI (no pypi key).
+  - name: compas-RV
+    owner: blockresearchgroup
+    category: structures
+  - name: compas-FoFin
+    owner: blockresearchgroup
+    category: structures
+  - name: compas-IGS
+    owner: blockresearchgroup
+    category: structures
+  - name: compas-Masonry
+    owner: blockresearchgroup
+    category: structures
+
+  # =======================================================================
+  # gramaziokohler — timber, fabrication & COMPAS extensions
+  # =======================================================================
+  - name: compas_timber
+    owner: gramaziokohler
+    category: timber
+    pypi: compas_timber
+  - name: compas_cadwork
+    owner: gramaziokohler
+    category: timber
+    pypi: compas_cadwork
+  - name: tekton               # COMPAS Timber ↔ Dlubal (RFEM/RSTAB); no reliable PyPI mapping
+    owner: gramaziokohler
+    category: timber
+  - name: compas_pb
+    owner: gramaziokohler
+    category: tooling
+    pypi: compas_pb
+  - name: compas_brep
+    owner: gramaziokohler
+    category: geometry
+    pypi: compas_brep
+  - name: compas_td
+    owner: gramaziokohler
+    category: geometry
+  - name: compas_threejs
+    owner: gramaziokohler
+    category: viz
+  - name: compas_acoustics
+    owner: gramaziokohler
+    category: other
+  - name: compas-make2d
+    owner: gramaziokohler
+    category: tooling
+  - name: compas-switcher
+    owner: gramaziokohler
+    category: tooling
+
+  # ---- applications / big tools (top of the dependency stack) ----------
+  - name: antikythera         # process manager built on the COMPAS stack; PyPI name is ambiguous
+    owner: gramaziokohler
+    category: apps
+    tier: apps
+
+  # ---- archived (kept for historical migration signal) ------------------
+  - name: compas_view2
+    category: viz
+    status: archived
+    pypi: compas_view2
+  - name: compas_fea
+    category: fea
+    status: archived
+    pypi: compas_fea

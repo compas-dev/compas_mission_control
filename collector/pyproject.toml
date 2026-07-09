@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=66.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compas-mission-control-collector"
+version = "0.1.0"
+description = "Data collector for the COMPAS Mission Control dashboard."
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0",
+    "packaging>=23.0",
+]
+
+[tool.ruff]
+line-length = 179
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
