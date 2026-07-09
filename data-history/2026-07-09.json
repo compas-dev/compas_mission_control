@@ -74,12 +74,12 @@
       "features_adopted": 6
     },
     "tekton": {
-      "staleness": "aging",
-      "ci": "failing",
+      "staleness": "unknown",
+      "ci": "none",
       "open_issues": 0,
       "open_prs": 0,
-      "compas_major_floor": 2,
-      "features_adopted": 5
+      "compas_major_floor": null,
+      "features_adopted": 1
     },
     "compas_brep": {
       "staleness": "fresh",
@@ -154,12 +154,12 @@
       "features_adopted": 5
     },
     "compas_td": {
-      "staleness": "dormant",
+      "staleness": "unknown",
       "ci": "none",
-      "open_issues": 1,
-      "open_prs": 1,
+      "open_issues": 0,
+      "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 2
+      "features_adopted": 1
     },
     "compas_triangle": {
       "staleness": "dormant",
@@ -386,7 +386,7 @@
       "features_adopted": 5
     },
     "compas-switcher": {
-      "staleness": "dormant",
+      "staleness": "unknown",
       "ci": "none",
       "open_issues": 0,
       "open_prs": 0,
@@ -442,12 +442,12 @@
       "features_adopted": 2
     },
     "compas_acoustics": {
-      "staleness": "fresh",
-      "ci": "failing",
+      "staleness": "unknown",
+      "ci": "none",
       "open_issues": 0,
       "open_prs": 0,
-      "compas_major_floor": 2,
-      "features_adopted": 5
+      "compas_major_floor": null,
+      "features_adopted": 1
     }
   }
 }

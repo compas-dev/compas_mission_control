@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T12:53:30Z",
+  "generated_at": "2026-07-09T13:16:29Z",
   "features": [
     {
       "id": "compas2",
@@ -255,7 +255,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 323
+        "oldest_open_issue_age_days": 324
       },
       "release": {
         "github_tag": "2.3.0",
@@ -342,7 +342,7 @@
         "ci": "failing",
         "open_issues": 74,
         "open_prs": 11,
-        "oldest_open_issue_age_days": 3143
+        "oldest_open_issue_age_days": 3144
       },
       "release": {
         "github_tag": "2.0.1",
@@ -862,13 +862,13 @@
       "tier": "domain",
       "role": null,
       "status": "active",
-      "description": "COMPAS Timber Dlubal (RFEM/RSTAB) integration",
-      "stars": 1,
-      "language": "Python",
+      "description": null,
+      "stars": 0,
+      "language": null,
       "health": {
-        "last_commit_date": "2026-06-04",
-        "staleness": "aging",
-        "ci": "failing",
+        "last_commit_date": null,
+        "staleness": "unknown",
+        "ci": "none",
         "open_issues": 0,
         "open_prs": 0,
         "oldest_open_issue_age_days": null
@@ -881,40 +881,36 @@
         "drift": false
       },
       "packaging": {
-        "compas_pin": "compas >=2",
-        "compas_major_floor": 2,
-        "python_versions": [
-          "3.10",
-          "3.11",
-          "3.12"
-        ],
-        "python_source": "ci-matrix",
+        "compas_pin": null,
+        "compas_major_floor": null,
+        "python_versions": [],
+        "python_source": "unknown",
         "hosts": {
-          "rhino": false,
-          "ghpython": false,
-          "blender": false
+          "rhino": null,
+          "ghpython": null,
+          "blender": null
         }
       },
       "features": {
         "compas2": {
-          "status": "adopted",
+          "status": "n/a",
           "source": "auto",
-          "detail": "compas >=2"
+          "detail": "no compas dependency"
         },
         "py311": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "py312": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "py313": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "new-scene-api": {
           "status": "not-adopted",
@@ -932,15 +928,12 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "no match"
         }
       },
-      "ecosystem_deps": [
-        "compas",
-        "compas_timber"
-      ]
+      "ecosystem_deps": []
     },
     {
       "name": "compas_brep",
@@ -1731,16 +1724,16 @@
       "tier": "foundation",
       "role": null,
       "status": "active",
-      "description": "COMPAS TD - Tile Design: Design library for tiling on non-planar surfaces for the COMPAS Framework.",
+      "description": null,
       "stars": 0,
-      "language": "Python",
+      "language": null,
       "health": {
-        "last_commit_date": "2025-07-02",
-        "staleness": "dormant",
+        "last_commit_date": null,
+        "staleness": "unknown",
         "ci": "none",
-        "open_issues": 1,
-        "open_prs": 1,
-        "oldest_open_issue_age_days": 372
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
       },
       "release": {
         "github_tag": null,
@@ -1750,21 +1743,21 @@
         "drift": false
       },
       "packaging": {
-        "compas_pin": "compas ==2.*",
+        "compas_pin": null,
         "compas_major_floor": null,
         "python_versions": [],
         "python_source": "unknown",
         "hosts": {
-          "rhino": false,
-          "ghpython": false,
-          "blender": false
+          "rhino": null,
+          "ghpython": null,
+          "blender": null
         }
       },
       "features": {
         "compas2": {
-          "status": "unknown",
+          "status": "n/a",
           "source": "auto",
-          "detail": "compas ==2.*"
+          "detail": "no compas dependency"
         },
         "py311": {
           "status": "unknown",
@@ -1797,14 +1790,12 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "no match"
         }
       },
-      "ecosystem_deps": [
-        "compas"
-      ]
+      "ecosystem_deps": []
     },
     {
       "name": "compas_triangle",
@@ -4298,12 +4289,12 @@
       "tier": "tooling",
       "role": null,
       "status": "active",
-      "description": "Compas environment switching and Grasshopper component installation GUI tool. ",
+      "description": null,
       "stars": 0,
-      "language": "Python",
+      "language": null,
       "health": {
-        "last_commit_date": "2024-10-04",
-        "staleness": "dormant",
+        "last_commit_date": null,
+        "staleness": "unknown",
         "ci": "none",
         "open_issues": 0,
         "open_prs": 0,
@@ -4891,13 +4882,13 @@
       "tier": "domain",
       "role": null,
       "status": "active",
-      "description": "A COMPAS extensions for room acoustics",
-      "stars": 2,
-      "language": "Python",
+      "description": null,
+      "stars": 0,
+      "language": null,
       "health": {
-        "last_commit_date": "2026-07-09",
-        "staleness": "fresh",
-        "ci": "failing",
+        "last_commit_date": null,
+        "staleness": "unknown",
+        "ci": "none",
         "open_issues": 0,
         "open_prs": 0,
         "oldest_open_issue_age_days": null
@@ -4910,40 +4901,36 @@
         "drift": false
       },
       "packaging": {
-        "compas_pin": "compas <3.0,>=2.13",
-        "compas_major_floor": 2,
-        "python_versions": [
-          "3.10",
-          "3.11",
-          "3.12"
-        ],
-        "python_source": "ci-matrix",
+        "compas_pin": null,
+        "compas_major_floor": null,
+        "python_versions": [],
+        "python_source": "unknown",
         "hosts": {
-          "rhino": false,
-          "ghpython": false,
-          "blender": false
+          "rhino": null,
+          "ghpython": null,
+          "blender": null
         }
       },
       "features": {
         "compas2": {
-          "status": "adopted",
+          "status": "n/a",
           "source": "auto",
-          "detail": "compas <3.0,>=2.13"
+          "detail": "no compas dependency"
         },
         "py311": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "py312": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "py313": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "support: 3.10, 3.11, 3.12"
+          "detail": "no python info"
         },
         "new-scene-api": {
           "status": "not-adopted",
@@ -4961,15 +4948,26 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "no match"
         }
       },
-      "ecosystem_deps": [
-        "compas"
-      ]
+      "ecosystem_deps": []
     }
   ],
-  "warnings": []
+  "warnings": [
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422"
+  ]
 }
