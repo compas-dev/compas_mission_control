@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T23:50:22Z",
+  "generated_at": "2026-07-10T06:51:27Z",
   "features": [
     {
       "id": "compas2",
@@ -121,14 +121,14 @@
           "detail": "support: 3.9, 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'from compas.scene import Scene'"
+          "detail": "code search failed"
         },
         "no-deprecated-artist": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "still uses 'compas.artists'"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -136,9 +136,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         }
       },
       "ecosystem_deps": []
@@ -387,9 +387,9 @@
           "detail": "support: 3.9, 3.13"
         },
         "new-scene-api": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'from compas.scene import Scene'"
+          "detail": "code search failed"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -476,9 +476,9 @@
           "detail": "support: 3.9, 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'from compas.scene import Scene'"
+          "detail": "code search failed"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -843,9 +843,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         }
       },
       "ecosystem_deps": [
@@ -2039,9 +2039,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -2267,7 +2267,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1745
+        "oldest_open_issue_age_days": 1746
       },
       "release": {
         "github_tag": "0.6.0",
@@ -2550,7 +2550,7 @@
           "3.10",
           "3.11"
         ],
-        "python_source": "ci-matrix",
+        "python_source": "classifiers",
         "hosts": {
           "rhino": false,
           "ghpython": false,
@@ -3289,9 +3289,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -4458,7 +4458,7 @@
       "stars": 4,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-09",
+        "last_commit_date": "2026-07-10",
         "staleness": "fresh",
         "ci": "passing",
         "open_issues": 11,
@@ -4611,9 +4611,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         }
       },
       "ecosystem_deps": []
@@ -4957,6 +4957,15 @@
     }
   ],
   "warnings": [
+    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas_fab&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas_robots&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas_tna&per_page=1 -> HTTP 500",
+    "GET https://api.github.com/repos/blockresearchgroup/compas_bender/contents/.github/workflows?ref=main -> HTTP 502",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Ablockresearchgroup%2Fcompas_rui&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Agramaziokohler%2Fcompas_timber&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
@@ -4968,6 +4977,7 @@
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422"
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas-IGS&per_page=1 -> HTTP 503"
   ]
 }
