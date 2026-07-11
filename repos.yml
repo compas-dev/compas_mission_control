@@ -68,9 +68,9 @@ repos:
   - name: compas_viewer
     category: viz
     pypi: compas_viewer
-  - name: compas_plotters
+  - name: compas_plotter
     category: viz
-    pypi: compas_plotters
+    pypi: compas_plotter
   - name: compas_notebook
     category: viz
     pypi: compas_notebook
