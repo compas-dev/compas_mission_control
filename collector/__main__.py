@@ -24,6 +24,7 @@ import yaml
 # Allow running as `python -m collector` or `python collector/__main__.py`.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import conda  # noqa: E402
 from features import detect  # noqa: E402
 from github import GitHub  # noqa: E402
 import parse  # noqa: E402
@@ -134,7 +135,7 @@ def collect_repo(gh: GitHub, cfg: dict, defaults: dict, features: list[dict], tr
     # -- features ---------------------------------------------------------
     feat_cells = {}
     for feature in features:
-        feat_cells[feature["id"]] = detect(feature, cfg, packaging, gh, owner, name)
+        feat_cells[feature["id"]] = detect(feature, cfg, packaging, gh, owner, name, release=release, conda=conda)
 
     # -- ecosystem dependency edges (which tracked packages this depends on) --
     self_ids = {parse.canonical_name(name)}

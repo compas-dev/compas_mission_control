@@ -61,7 +61,7 @@ Views are deep-linkable: `#health`, `#migration`, `#features`, `#ecosystem`, and
 ## Configuration
 
 - **Track a repo** — add an entry to [`repos.yml`](repos.yml) (deliberately curated, not auto-discovered). `owner` defaults to `compas-dev`; override per entry. `tier` (`core` / `foundation` / `domain` / `apps` / `tooling`) defaults from `category` and drives the Ecosystem diagram.
-- **Add an adoption check** — add a column to [`features.yml`](features.yml). Detection kinds: `pin`, `python`, `file` (`any_of` / `none_of`), `code` (GitHub code search), `manual`.
+- **Add an adoption check** — add a column to [`features.yml`](features.yml). Detection kinds: `pin`, `python`, `file` (`any_of` / `none_of`), `code` (GitHub code search), `pypi-match` (PyPI release matches the GitHub release), `conda` (published on conda-forge), `manual`.
 
 ## Deployment
 

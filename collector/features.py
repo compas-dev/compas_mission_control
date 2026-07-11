@@ -8,6 +8,8 @@ from __future__ import annotations
 
 from typing import Optional
 
+from packaging.version import Version
+
 from parse import satisfies
 
 STATUS_ADOPTED = "adopted"
@@ -20,7 +22,16 @@ def _cell(status: str, source: str = "auto", detail: str = "") -> dict:
     return {"status": status, "source": source, "detail": detail}
 
 
-def detect(feature: dict, repo_cfg: dict, packaging: dict, gh, owner: str, name: str) -> dict:
+def _same_version(a: str, b: str) -> bool:
+    """Compare semantically so PyPI's '1.0.0rc0' matches a GitHub '1.0.0-rc0' tag."""
+    try:
+        return Version(a) == Version(b)
+    except Exception:  # noqa: BLE001 — non-PEP440 tags fall back to string compare
+        return a == b
+
+
+def detect(feature: dict, repo_cfg: dict, packaging: dict, gh, owner: str, name: str,
+           release: dict | None = None, conda=None) -> dict:
     """Return a single adoption cell for (feature, repo)."""
     fid = feature["id"]
     kind = feature.get("kind", "manual")
@@ -30,6 +41,29 @@ def detect(feature: dict, repo_cfg: dict, packaging: dict, gh, owner: str, name:
     overrides = repo_cfg.get("feature_overrides") or {}
     if fid in overrides:
         return _cell(overrides[fid], source="manual", detail="manual override")
+
+    # -- deployment checks (use already-collected release data / conda-forge) --
+    if kind == "pypi-match":
+        if not repo_cfg.get("pypi"):
+            return _cell(STATUS_NA, detail="not distributed on PyPI")
+        rel = release or {}
+        pv, gt = rel.get("pypi_version"), rel.get("github_tag")
+        if pv and gt:
+            if _same_version(pv, gt):
+                return _cell(STATUS_ADOPTED, detail=f"PyPI {pv} = GitHub {gt}")
+            return _cell(STATUS_NOT, detail=f"PyPI {pv} ≠ GitHub {gt}")
+        if gt and not pv:
+            return _cell(STATUS_NOT, detail=f"GitHub {gt}, not on PyPI")
+        return _cell(STATUS_UNKNOWN, detail="no comparable release")
+
+    if kind == "conda":
+        pkg = repo_cfg.get("pypi") or name
+        info = conda.latest(pkg) if conda else None
+        if info:
+            return _cell(STATUS_ADOPTED, detail=f"conda-forge {info['version']}")
+        if not repo_cfg.get("pypi"):
+            return _cell(STATUS_NA, detail="not distributed on PyPI/conda")
+        return _cell(STATUS_NOT, detail="no conda-forge package")
 
     if kind == "pin":
         pkg = detect_cfg.get("package", "")

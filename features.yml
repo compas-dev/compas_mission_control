@@ -65,3 +65,12 @@ features:
     detect:
       present:
         - "compas_invocations2"
+
+  # -- deployment / release checks --------------------------------------
+  - id: pypi-match
+    label: "PyPI = GitHub release"
+    kind: pypi-match
+
+  - id: conda-forge
+    label: "On conda-forge"
+    kind: conda
