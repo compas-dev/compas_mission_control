@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-11",
   "repos": {
     "compas": {
       "staleness": "fresh",
@@ -27,11 +27,11 @@
     },
     "compas_fab": {
       "staleness": "fresh",
-      "ci": "failing",
+      "ci": "passing",
       "open_issues": 74,
-      "open_prs": 11,
+      "open_prs": 12,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 4
     },
     "compas_robots": {
       "staleness": "aging",
@@ -39,7 +39,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 7
+      "features_adopted": 6
     },
     "compas_rrc": {
       "staleness": "dormant",
@@ -55,7 +55,7 @@
       "open_issues": 3,
       "open_prs": 3,
       "compas_major_floor": 2,
-      "features_adopted": 7
+      "features_adopted": 6
     },
     "compas_cadwork": {
       "staleness": "fresh",
@@ -68,8 +68,8 @@
     "compas_timber": {
       "staleness": "fresh",
       "ci": "passing",
-      "open_issues": 68,
-      "open_prs": 14,
+      "open_issues": 69,
+      "open_prs": 17,
       "compas_major_floor": 2,
       "features_adopted": 6
     },
@@ -93,7 +93,7 @@
       "staleness": "aging",
       "ci": "passing",
       "open_issues": 0,
-      "open_prs": 1,
+      "open_prs": 2,
       "compas_major_floor": null,
       "features_adopted": 3
     },
@@ -269,7 +269,7 @@
       "staleness": "fresh",
       "ci": "failing",
       "open_issues": 0,
-      "open_prs": 3,
+      "open_prs": 4,
       "compas_major_floor": 2,
       "features_adopted": 5
     },
@@ -333,7 +333,7 @@
       "staleness": "fresh",
       "ci": "passing",
       "open_issues": 1,
-      "open_prs": 0,
+      "open_prs": 1,
       "compas_major_floor": 2,
       "features_adopted": 6
     },
@@ -447,7 +447,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 1
+      "features_adopted": 0
     }
   }
 }

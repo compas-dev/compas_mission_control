@@ -1,5 +1,5 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "repos": {
     "compas": {
       "staleness": "fresh",
@@ -7,7 +7,7 @@
       "open_issues": 101,
       "open_prs": 17,
       "compas_major_floor": null,
-      "features_adopted": 4
+      "features_adopted": 2
     },
     "compas_framework": {
       "staleness": "dormant",
@@ -31,7 +31,7 @@
       "open_issues": 74,
       "open_prs": 11,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 5
     },
     "compas_robots": {
       "staleness": "aging",
@@ -39,7 +39,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 7
+      "features_adopted": 6
     },
     "compas_rrc": {
       "staleness": "dormant",
@@ -71,7 +71,7 @@
       "open_issues": 68,
       "open_prs": 14,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 5
     },
     "tekton": {
       "staleness": "unknown",
@@ -183,7 +183,7 @@
       "open_issues": 1,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 3
+      "features_adopted": 2
     },
     "compas-Masonry": {
       "staleness": "stale",
@@ -295,7 +295,7 @@
       "open_issues": 4,
       "open_prs": 1,
       "compas_major_floor": null,
-      "features_adopted": 4
+      "features_adopted": 3
     },
     "compas_tno": {
       "staleness": "aging",
@@ -415,7 +415,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 3
+      "features_adopted": 2
     },
     "compas_session": {
       "staleness": "stale",
