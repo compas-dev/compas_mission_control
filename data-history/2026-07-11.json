@@ -29,9 +29,9 @@
       "staleness": "fresh",
       "ci": "passing",
       "open_issues": 74,
-      "open_prs": 12,
+      "open_prs": 13,
       "compas_major_floor": 2,
-      "features_adopted": 4
+      "features_adopted": 6
     },
     "compas_robots": {
       "staleness": "aging",
@@ -39,7 +39,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 7
     },
     "compas_rrc": {
       "staleness": "dormant",
@@ -55,7 +55,7 @@
       "open_issues": 3,
       "open_prs": 3,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 7
     },
     "compas_cadwork": {
       "staleness": "fresh",
@@ -215,7 +215,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 4
+      "features_adopted": 3
     },
     "compas_assembly": {
       "staleness": "dormant",
@@ -329,7 +329,7 @@
       "compas_major_floor": null,
       "features_adopted": 6
     },
-    "compas_plotters": {
+    "compas_plotter": {
       "staleness": "fresh",
       "ci": "passing",
       "open_issues": 1,
@@ -405,7 +405,7 @@
       "staleness": "fresh",
       "ci": "passing",
       "open_issues": 11,
-      "open_prs": 1,
+      "open_prs": 2,
       "compas_major_floor": 2,
       "features_adopted": 7
     },
@@ -447,7 +447,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 0
+      "features_adopted": 1
     }
   }
 }
