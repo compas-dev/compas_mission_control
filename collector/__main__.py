@@ -44,6 +44,7 @@ TIER_BY_CATEGORY = {
     "xr": "domain",
     "other": "domain",
     "viz": "visualizers",
+    "ai": "apps",
     "apps": "apps",
     "tooling": "tooling",
     "template": "tooling",
@@ -206,7 +207,7 @@ def main() -> int:
 
     # Deterministic ordering for clean diffs.
     category_order = {c: i for i, c in enumerate(
-        ["core", "fabrication", "timber", "geometry", "structures", "fea", "viz", "xr", "apps", "tooling", "template", "other"]
+        ["core", "fabrication", "timber", "geometry", "structures", "fea", "viz", "xr", "ai", "apps", "tooling", "template", "other"]
     )}
     repos.sort(key=lambda r: (category_order.get(r["category"], 99), r["name"]))
 

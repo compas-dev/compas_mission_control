@@ -18,12 +18,12 @@ const sortKey = ref("stars"); // stars | activity | name
 const CAT_LABEL = {
   core: "Core", fabrication: "Fabrication", timber: "Timber", geometry: "Geometry",
   structures: "Structures", fea: "FEA", viz: "Visualization", xr: "XR",
-  apps: "Apps", tooling: "Tooling", template: "Templates", other: "Other",
+  ai: "AI", apps: "Apps", tooling: "Tooling", template: "Templates", other: "Other",
 };
 const PY = ["3.9", "3.10", "3.11", "3.12", "3.13"];
 const STALE_ORDER = { fresh: 0, aging: 1, stale: 2, dormant: 3, unknown: 4 };
 const CAT_RANK = Object.fromEntries(
-  ["core", "geometry", "structures", "fea", "fabrication", "timber", "xr", "viz", "apps", "tooling", "template", "other"].map((c, i) => [c, i])
+  ["core", "geometry", "structures", "fea", "fabrication", "timber", "xr", "viz", "ai", "apps", "tooling", "template", "other"].map((c, i) => [c, i])
 );
 const TIER_GROUP = [
   { id: "core", name: "Core" },
@@ -72,11 +72,17 @@ onMounted(async () => {
   }
   window.addEventListener("resize", onResize);
   window.addEventListener("hashchange", applyHash);
+  window.addEventListener("keydown", onKey);
 });
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onResize);
   window.removeEventListener("hashchange", applyHash);
+  window.removeEventListener("keydown", onKey);
 });
+
+function onKey(e) {
+  if (e.key === "Escape" && selected.value) closeDetail();
+}
 
 watch(theme, applyTheme);
 watch(mode, () => {

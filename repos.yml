@@ -188,10 +188,10 @@ repos:
     category: tooling
 
   # ---- applications / big tools (top of the dependency stack) ----------
-  - name: antikythera         # process manager built on the COMPAS stack; PyPI name is ambiguous
+  - name: antikythera         # process manager built on the COMPAS stack
     owner: gramaziokohler
     pypi: antikythera-sdk
-    category: apps
+    category: fabrication
     tier: apps
   # Rhino plugins — distributed via Yak, not PyPI (no pypi key).
   - name: compas-RV
@@ -218,6 +218,56 @@ repos:
     owner: arpastrana
     category: structures
     pypi: compas_cem
+  - name: jax_fdm               # auto-diff force-density form finding (depends on compas 2.x)
+    owner: arpastrana
+    category: structures
+    pypi: jax_fdm
+
+  # =======================================================================
+  # petrasvestartas
+  # =======================================================================
+  - name: compas_manifold       # mesh-boolean (Manifold) wrapper
+    owner: petrasvestartas
+    category: geometry
+    pypi: compas_manifold
+  - name: compas_occt           # OpenCASCADE (OCCT) wrapper
+    owner: petrasvestartas
+    category: geometry
+    pypi: compas_occt
+  - name: compas_nest           # nesting / part layout
+    owner: petrasvestartas
+    category: fabrication
+    pypi: compas_nest
+
+  # =======================================================================
+  # community & extended ecosystem
+  # =======================================================================
+  - name: compas_cnc            # subtractive / CNC operations
+    owner: BRG-research
+    category: fabrication
+    pypi: compas_cnc
+  - name: digital_casting_system
+    owner: USI-FMAA
+    category: fabrication
+    pypi: digital_casting_system
+  - name: compas_timber_pb      # COMPAS Timber ↔ Protobuf
+    owner: gramaziokohler
+    category: timber
+    pypi: compas_timber_pb
+  - name: timber_design         # automation toolkit built on compas_timber
+    owner: gramaziokohler
+    category: timber
+    tier: apps
+    pypi: timber_design
+  - name: aixd_ara              # Grasshopper plugin for the AIXD toolkit
+    owner: gramaziokohler
+    category: ai
+    tier: apps
+    pypi: aixd_ara
+  - name: lamcp                 # LAmbda MCP — teach your LLM Grasshopper tricks
+    owner: gramaziokohler
+    category: tooling
+    pypi: lamcp
 
   # ---- archived (kept for historical migration signal) ------------------
   - name: compas_view2
