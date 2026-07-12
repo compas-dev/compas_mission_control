@@ -157,6 +157,7 @@ def collect_repo(gh: GitHub, cfg: dict, defaults: dict, features: list[dict], tr
         "url": meta.get("html_url", f"https://github.com/{owner}/{name}"),
         "category": category,
         "tier": cfg.get("tier") or TIER_BY_CATEGORY.get(category, "domain"),
+        "pypi": cfg.get("pypi"),
         "role": cfg.get("role"),
         "status": status,
         "description": meta.get("description"),

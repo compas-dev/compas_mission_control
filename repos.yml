@@ -190,6 +190,7 @@ repos:
   # ---- applications / big tools (top of the dependency stack) ----------
   - name: antikythera         # process manager built on the COMPAS stack; PyPI name is ambiguous
     owner: gramaziokohler
+    pypi: antikythera-sdk
     category: apps
     tier: apps
   # Rhino plugins — distributed via Yak, not PyPI (no pypi key).

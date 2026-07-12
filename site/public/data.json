@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T06:11:35Z",
+  "generated_at": "2026-07-12T08:42:35Z",
   "features": [
     {
       "id": "compas2",
@@ -63,8 +63,7 @@
     "xr",
     "apps",
     "tooling",
-    "template",
-    "other"
+    "template"
   ],
   "repos": [
     {
@@ -161,7 +160,8 @@
           "detail": "conda-forge 2.15.1"
         }
       },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": "compas"
     },
     {
       "name": "compas_framework",
@@ -266,7 +266,8 @@
         "compas_session",
         "compas_shapeop",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_framework"
     },
     {
       "name": "compas_eve",
@@ -336,9 +337,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "adopted",
@@ -346,9 +347,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -363,7 +364,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_eve"
     },
     {
       "name": "compas_fab",
@@ -460,7 +462,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_robots"
-      ]
+      ],
+      "pypi": "compas_fab"
     },
     {
       "name": "compas_robots",
@@ -479,7 +482,7 @@
         "ci": "passing",
         "open_issues": 5,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 876
+        "oldest_open_issue_age_days": 877
       },
       "release": {
         "github_tag": "1.0.1",
@@ -558,7 +561,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_robots"
     },
     {
       "name": "compas_rrc",
@@ -623,9 +627,9 @@
           "detail": "support: 3.8, 3.9, 3.10"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "no match"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -655,7 +659,8 @@
       },
       "ecosystem_deps": [
         "compas_fab"
-      ]
+      ],
+      "pypi": "compas_rrc"
     },
     {
       "name": "compas_slicer",
@@ -755,7 +760,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_cgal"
-      ]
+      ],
+      "pypi": "compas_slicer"
     },
     {
       "name": "compas_cadwork",
@@ -853,7 +859,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_timber"
-      ]
+      ],
+      "pypi": "compas_cadwork"
     },
     {
       "name": "compas_timber",
@@ -952,98 +959,8 @@
         "compas",
         "compas_brep",
         "compas_model"
-      ]
-    },
-    {
-      "name": "tekton",
-      "owner": "gramaziokohler",
-      "url": "https://github.com/gramaziokohler/tekton",
-      "category": "timber",
-      "tier": "domain",
-      "role": null,
-      "status": "active",
-      "description": null,
-      "stars": 0,
-      "language": null,
-      "health": {
-        "last_commit_date": null,
-        "staleness": "unknown",
-        "ci": "none",
-        "open_issues": 0,
-        "open_prs": 0,
-        "oldest_open_issue_age_days": null
-      },
-      "release": {
-        "github_tag": null,
-        "github_date": null,
-        "pypi_version": null,
-        "pypi_date": null,
-        "drift": false
-      },
-      "packaging": {
-        "compas_pin": null,
-        "compas_major_floor": null,
-        "python_versions": [],
-        "python_source": "unknown",
-        "hosts": {
-          "rhino": null,
-          "ghpython": null,
-          "blender": null
-        }
-      },
-      "features": {
-        "compas2": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "no compas dependency"
-        },
-        "py311": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py312": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py313": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "new-scene-api": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "no-deprecated-artist": {
-          "status": "adopted",
-          "source": "auto",
-          "detail": "clean"
-        },
-        "mkdocs": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "missing mkdocs.yml"
-        },
-        "invocations2": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "pypi-match": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI"
-        },
-        "conda-forge": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI/conda"
-        }
-      },
-      "ecosystem_deps": []
+      ],
+      "pypi": "compas_timber"
     },
     {
       "name": "compas_brep",
@@ -1142,7 +1059,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_brep"
     },
     {
       "name": "compas_cgal",
@@ -1238,7 +1156,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_cgal"
     },
     {
       "name": "compas_gmsh",
@@ -1335,7 +1254,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_gmsh"
     },
     {
       "name": "compas_ifc",
@@ -1432,7 +1352,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_model"
-      ]
+      ],
+      "pypi": "compas_ifc"
     },
     {
       "name": "compas_libigl",
@@ -1527,7 +1448,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_libigl"
     },
     {
       "name": "compas_nurbs",
@@ -1624,7 +1546,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_nurbs"
     },
     {
       "name": "compas_occ",
@@ -1722,7 +1645,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_occ"
     },
     {
       "name": "compas_shapeop",
@@ -1817,7 +1741,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_shapeop"
     },
     {
       "name": "compas_skeleton",
@@ -1914,98 +1839,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
-    },
-    {
-      "name": "compas_td",
-      "owner": "gramaziokohler",
-      "url": "https://github.com/gramaziokohler/compas_td",
-      "category": "geometry",
-      "tier": "foundation",
-      "role": null,
-      "status": "active",
-      "description": null,
-      "stars": 0,
-      "language": null,
-      "health": {
-        "last_commit_date": null,
-        "staleness": "unknown",
-        "ci": "none",
-        "open_issues": 0,
-        "open_prs": 0,
-        "oldest_open_issue_age_days": null
-      },
-      "release": {
-        "github_tag": null,
-        "github_date": null,
-        "pypi_version": null,
-        "pypi_date": null,
-        "drift": false
-      },
-      "packaging": {
-        "compas_pin": null,
-        "compas_major_floor": null,
-        "python_versions": [],
-        "python_source": "unknown",
-        "hosts": {
-          "rhino": null,
-          "ghpython": null,
-          "blender": null
-        }
-      },
-      "features": {
-        "compas2": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "no compas dependency"
-        },
-        "py311": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py312": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py313": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "new-scene-api": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "no-deprecated-artist": {
-          "status": "adopted",
-          "source": "auto",
-          "detail": "clean"
-        },
-        "mkdocs": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "missing mkdocs.yml"
-        },
-        "invocations2": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "pypi-match": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI"
-        },
-        "conda-forge": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI/conda"
-        }
-      },
-      "ecosystem_deps": []
+      ],
+      "pypi": "compas_skeleton"
     },
     {
       "name": "compas_triangle",
@@ -2102,7 +1937,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_triangle"
     },
     {
       "name": "compas-FoFin",
@@ -2201,7 +2037,8 @@
         "compas_fd",
         "compas_rui",
         "compas_session"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas-IGS",
@@ -2300,7 +2137,8 @@
         "compas_occ",
         "compas_rui",
         "compas_session"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas-Masonry",
@@ -2405,7 +2243,8 @@
         "compas_session",
         "compas_tna",
         "compas_tno"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas-RV",
@@ -2508,7 +2347,8 @@
         "compas_skeleton",
         "compas_tna",
         "compas_triangle"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas_3gs",
@@ -2608,7 +2448,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_skeleton"
-      ]
+      ],
+      "pypi": "compas_3gs"
     },
     {
       "name": "compas_ags",
@@ -2706,7 +2547,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_ags"
     },
     {
       "name": "compas_assembly",
@@ -2804,7 +2646,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_assembly"
     },
     {
       "name": "compas_bender",
@@ -2901,7 +2744,104 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_bender"
+    },
+    {
+      "name": "compas_cem",
+      "owner": "arpastrana",
+      "url": "https://github.com/arpastrana/compas_cem",
+      "category": "structures",
+      "tier": "domain",
+      "role": null,
+      "status": "active",
+      "description": "Inverse design of 3D truss networks with automatic differentiation",
+      "stars": 44,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2025-02-25",
+        "staleness": "dormant",
+        "ci": "failing",
+        "open_issues": 2,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": 2102
+      },
+      "release": {
+        "github_tag": "0.8.6",
+        "github_date": "2025-02-25",
+        "pypi_version": "0.8.6",
+        "pypi_date": "2025-02-25",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas ==1.17.10",
+        "compas_major_floor": null,
+        "python_versions": [
+          "3.9"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "unknown",
+          "source": "auto",
+          "detail": "compas ==1.17.10"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9"
+        },
+        "py312": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "still uses 'compas.artists'"
+        },
+        "mkdocs": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "missing mkdocs.yml"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.8.6 = GitHub 0.8.6"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas"
+      ],
+      "pypi": "compas_cem"
     },
     {
       "name": "compas_cra",
@@ -2997,7 +2937,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_assembly"
-      ]
+      ],
+      "pypi": "compas_cra"
     },
     {
       "name": "compas_dem",
@@ -3097,7 +3038,8 @@
         "compas_cgal",
         "compas_libigl",
         "compas_model"
-      ]
+      ],
+      "pypi": "compas_dem"
     },
     {
       "name": "compas_dr",
@@ -3194,7 +3136,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_dr"
     },
     {
       "name": "compas_fd",
@@ -3291,7 +3234,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_fd"
     },
     {
       "name": "compas_lmgc90",
@@ -3391,7 +3335,8 @@
         "compas",
         "compas_dem",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_lmgc90"
     },
     {
       "name": "compas_model",
@@ -3490,7 +3435,8 @@
         "compas",
         "compas_occ",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_model"
     },
     {
       "name": "compas_rbe",
@@ -3588,7 +3534,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_rbe"
     },
     {
       "name": "compas_tna",
@@ -3687,7 +3634,8 @@
       "ecosystem_deps": [
         "compas",
         "compas_fd"
-      ]
+      ],
+      "pypi": "compas_tna"
     },
     {
       "name": "compas_tno",
@@ -3787,7 +3735,8 @@
         "compas",
         "compas_occ",
         "compas_tna"
-      ]
+      ],
+      "pypi": "compas_tno"
     },
     {
       "name": "compas_fea",
@@ -3885,7 +3834,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_fea"
     },
     {
       "name": "compas_fea2",
@@ -3984,7 +3934,8 @@
         "compas",
         "compas_gmsh",
         "compas_viewer"
-      ]
+      ],
+      "pypi": "compas_fea2"
     },
     {
       "name": "compas_notebook",
@@ -4081,7 +4032,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_notebook"
     },
     {
       "name": "compas_plotter",
@@ -4177,7 +4129,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_plotter"
     },
     {
       "name": "compas_threejs",
@@ -4276,7 +4229,8 @@
         "compas",
         "compas_brep",
         "compas_pb"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas_view2",
@@ -4371,7 +4325,8 @@
           "detail": "conda-forge 0.11.0"
         }
       },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": "compas_view2"
     },
     {
       "name": "compas_viewer",
@@ -4468,7 +4423,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_viewer"
     },
     {
       "name": "compas_xr",
@@ -4549,9 +4505,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -4570,7 +4526,8 @@
         "compas_invocations2",
         "compas_timber",
         "sphinx_compas2_theme"
-      ]
+      ],
+      "pypi": "compas_xr"
     },
     {
       "name": "antikythera",
@@ -4670,7 +4627,8 @@
         "compas_eve",
         "compas_pb",
         "compas_timber"
-      ]
+      ],
+      "pypi": "antikythera-sdk"
     },
     {
       "name": "compas-make2d",
@@ -4769,7 +4727,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": null
     },
     {
       "name": "compas-switcher",
@@ -4779,12 +4738,12 @@
       "tier": "tooling",
       "role": null,
       "status": "active",
-      "description": null,
+      "description": "Compas environment switching and Grasshopper component installation GUI tool. ",
       "stars": 0,
-      "language": null,
+      "language": "Python",
       "health": {
-        "last_commit_date": null,
-        "staleness": "unknown",
+        "last_commit_date": "2024-10-04",
+        "staleness": "dormant",
         "ci": "none",
         "open_issues": 0,
         "open_prs": 0,
@@ -4860,7 +4819,8 @@
           "detail": "not distributed on PyPI/conda"
         }
       },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": null
     },
     {
       "name": "compas_invocations2",
@@ -4954,7 +4914,8 @@
           "detail": "no conda-forge package"
         }
       },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": "compas_invocations2"
     },
     {
       "name": "compas_pb",
@@ -5053,7 +5014,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_pb"
     },
     {
       "name": "compas_rui",
@@ -5146,7 +5108,8 @@
           "detail": "no conda-forge package"
         }
       },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": "compas_rui"
     },
     {
       "name": "compas_session",
@@ -5244,7 +5207,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "compas_session"
     },
     {
       "name": "sphinx_compas2_theme",
@@ -5341,7 +5305,8 @@
       },
       "ecosystem_deps": [
         "compas"
-      ]
+      ],
+      "pypi": "sphinx_compas2_theme"
     },
     {
       "name": "compas_package_template",
@@ -5432,118 +5397,9 @@
           "detail": "not distributed on PyPI/conda"
         }
       },
-      "ecosystem_deps": []
-    },
-    {
-      "name": "compas_acoustics",
-      "owner": "gramaziokohler",
-      "url": "https://github.com/gramaziokohler/compas_acoustics",
-      "category": "other",
-      "tier": "domain",
-      "role": null,
-      "status": "active",
-      "description": null,
-      "stars": 0,
-      "language": null,
-      "health": {
-        "last_commit_date": null,
-        "staleness": "unknown",
-        "ci": "none",
-        "open_issues": 0,
-        "open_prs": 0,
-        "oldest_open_issue_age_days": null
-      },
-      "release": {
-        "github_tag": null,
-        "github_date": null,
-        "pypi_version": null,
-        "pypi_date": null,
-        "drift": false
-      },
-      "packaging": {
-        "compas_pin": null,
-        "compas_major_floor": null,
-        "python_versions": [],
-        "python_source": "unknown",
-        "hosts": {
-          "rhino": null,
-          "ghpython": null,
-          "blender": null
-        }
-      },
-      "features": {
-        "compas2": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "no compas dependency"
-        },
-        "py311": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py312": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "py313": {
-          "status": "unknown",
-          "source": "auto",
-          "detail": "no python info"
-        },
-        "new-scene-api": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "no-deprecated-artist": {
-          "status": "adopted",
-          "source": "auto",
-          "detail": "clean"
-        },
-        "mkdocs": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "missing mkdocs.yml"
-        },
-        "invocations2": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "no match"
-        },
-        "pypi-match": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI"
-        },
-        "conda-forge": {
-          "status": "n/a",
-          "source": "auto",
-          "detail": "not distributed on PyPI/conda"
-        }
-      },
-      "ecosystem_deps": []
+      "ecosystem_deps": [],
+      "pypi": null
     }
   ],
-  "warnings": [
-    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_eve&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_eve&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_xr&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-rrc%2Fcompas_rrc&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/repos/gramaziokohler/compas_brep/contents/requirements.txt?ref=main -> HTTP 502",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/repos/gramaziokohler/compas-make2d/contents/environment.yml?ref=main -> HTTP 502",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422"
-  ]
+  "warnings": []
 }

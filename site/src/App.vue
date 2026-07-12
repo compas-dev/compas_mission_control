@@ -54,9 +54,6 @@ onMounted(async () => {
   } catch (e) {}
   applyTheme();
 
-  const hash = location.hash.replace("#", "");
-  if (VALID_MODES.includes(hash)) mode.value = hash;
-
   try {
     const res = await fetch(`${import.meta.env.BASE_URL}data.json`, { cache: "no-cache" });
     if (!res.ok) throw new Error(`data.json ${res.status}`);
@@ -65,19 +62,24 @@ onMounted(async () => {
     error.value = String(e);
   }
 
+  applyHash(); // resolve #<mode> or #<repo> now that repo names are known
+
   const focus = new URLSearchParams(location.search).get("focus");
-  if (focus && nameToRepo.value[focus]) {
+  if (!selected.value && focus && nameToRepo.value[focus]) {
     mode.value = "ecosystem";
     await nextTick();
     onNodeEnter(focus);
   }
   window.addEventListener("resize", onResize);
+  window.addEventListener("hashchange", applyHash);
 });
-onBeforeUnmount(() => window.removeEventListener("resize", onResize));
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onResize);
+  window.removeEventListener("hashchange", applyHash);
+});
 
 watch(theme, applyTheme);
-watch(mode, (m) => {
-  if (location.hash.replace("#", "") !== m) history.replaceState(null, "", `#${m}`);
+watch(mode, () => {
   hovered.value = null;
   edgeLines.value = [];
 });
@@ -89,7 +91,7 @@ function toggleTheme() {
   theme.value = theme.value === "dark" ? "light" : "dark";
   try { localStorage.setItem("mc_theme", theme.value); } catch (e) {}
 }
-function setMode(m) { mode.value = m; }
+function setMode(m) { mode.value = m; location.hash = m; }
 function setGroup(g) { groupBy.value = g; try { localStorage.setItem("mc_group", g); } catch (e) {} }
 function setSort(s) { sortKey.value = s; try { localStorage.setItem("mc_sort", s); } catch (e) {} }
 function toggleArchived() { showArchived.value = !showArchived.value; }
@@ -286,6 +288,62 @@ function onNodeLeave() {
 function onResize() {
   if (hovered.value) computeEdges(hovered.value);
 }
+
+// ---- fast tooltip (replaces the slow native title= on small indicators) --
+const tip = ref({ show: false, x: 0, y: 0, text: "" });
+function tipShow(e, text) {
+  const r = e.currentTarget.getBoundingClientRect();
+  tip.value = { show: true, x: r.left + r.width / 2, y: r.top - 8, text };
+}
+function tipHide() { tip.value.show = false; }
+function adoptTip(r, f) {
+  const c = r.features?.[f.id] || {};
+  const st = c.status || "unknown";
+  return c.detail ? `${f.label} — ${st} · ${c.detail}` : `${f.label} — ${st}`;
+}
+
+// ---- single-repo detail (deep-linkable via ?repo=<name>) -------------
+const selected = ref(null);
+const selectedRepo = computed(() => (selected.value ? nameToRepo.value[selected.value] : null));
+// Single hash router: #<repo> opens a detail page, #fleet / #ecosystem pick a mode.
+function applyHash() {
+  const h = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if (h && nameToRepo.value[h]) { selected.value = h; return; }
+  selected.value = null;
+  if (VALID_MODES.includes(h)) mode.value = h;
+}
+function openDetail(name) {
+  selected.value = name;
+  location.hash = name;
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+function closeDetail() {
+  selected.value = null;
+  location.hash = mode.value;
+}
+const detailDeps = computed(() => selectedRepo.value?.ecosystem_deps || []);
+const detailDependents = computed(() => (selectedRepo.value ? dependentsMap.value[selectedRepo.value.name] || [] : []));
+function pypiUrl(r) { return r?.pypi ? `https://pypi.org/project/${r.pypi}/` : null; }
+function condaUrl(r) {
+  return r?.pypi && r.features?.["conda-forge"]?.status === "adopted"
+    ? `https://anaconda.org/conda-forge/${r.pypi}` : null;
+}
+const DASH_BASE = "https://compas.dev/mission-control/";
+const BADGES = [
+  { id: "normal", src: "https://compas.dev/badge.svg", label: "Standard" },
+  { id: "flat", src: "https://compas.dev/badge-flat.svg", label: "Flat" },
+];
+function badgeSnippet(r, src) {
+  return `[![Made with COMPAS](${src})](${DASH_BASE}#${r.name})`;
+}
+const copied = ref(null);
+async function copyBadge(r, b) {
+  try {
+    await navigator.clipboard.writeText(badgeSnippet(r, b.src));
+    copied.value = b.id;
+    setTimeout(() => { if (copied.value === b.id) copied.value = null; }, 1600);
+  } catch (e) {}
+}
 </script>
 
 <template>
@@ -311,6 +369,88 @@ function onResize() {
       </div>
     </header>
 
+    <!-- ===== SINGLE-REPO DETAIL (deep-linked via ?repo=<name>) ===== -->
+    <section v-if="selectedRepo" class="detail">
+      <button class="detail-back" @click="closeDetail">← All repositories</button>
+      <div class="detail-card">
+        <div class="detail-stripe" :style="{ background: `var(--cat-${selectedRepo.category})` }"></div>
+        <div class="detail-inner">
+          <header class="detail-head">
+            <h2 class="detail-name">{{ selectedRepo.name }}<span v-if="selectedRepo.status === 'archived'" class="detail-arch">archived</span></h2>
+            <div class="detail-meta">
+              <span class="detail-cat"><span class="lane-dot" :style="{ background: `var(--cat-${selectedRepo.category})` }"></span>{{ catLabel(selectedRepo.category) }}</span>
+              <span v-if="selectedRepo.role" class="muted">· {{ selectedRepo.role }}</span>
+              <span class="mono muted">· ★ {{ selectedRepo.stars ?? 0 }}</span>
+            </div>
+          </header>
+          <p v-if="selectedRepo.description" class="detail-desc">{{ selectedRepo.description }}</p>
+
+          <div class="detail-signals">
+            <div class="dsig"><div class="dsig-label">Activity</div>
+              <div class="dsig-val"><span class="dot" :class="staleClass(selectedRepo.health?.staleness)"></span>{{ relTime(selectedRepo.health?.last_commit_date) }} <span class="muted mono">{{ selectedRepo.health?.staleness }}</span></div></div>
+            <div class="dsig"><div class="dsig-label">CI</div>
+              <div class="dsig-val"><span v-if="selectedRepo.health?.ci === 'passing'" class="ci-pass">● pass</span><span v-else-if="selectedRepo.health?.ci === 'failing'" class="ci-fail">▲ fail</span><span v-else class="ci-none">—</span></div></div>
+            <div class="dsig"><div class="dsig-label">Backlog</div>
+              <div class="dsig-val mono">{{ selectedRepo.health?.open_issues ?? "—" }} issues · {{ selectedRepo.health?.open_prs ?? "—" }} PRs</div></div>
+            <div class="dsig"><div class="dsig-label">COMPAS pin</div>
+              <div class="dsig-val"><span class="pin" :class="pinInfo(selectedRepo).cls">{{ pinInfo(selectedRepo).text }}</span></div></div>
+            <div class="dsig"><div class="dsig-label">Latest release</div>
+              <div class="dsig-val mono"><template v-if="relTag(selectedRepo)">{{ relTag(selectedRepo) }} · {{ relTime(selectedRepo.release?.github_date || selectedRepo.release?.pypi_date) }} <span v-if="selectedRepo.release?.drift" class="drift">⚠ drift</span></template><span v-else class="muted">none</span></div></div>
+            <div class="dsig"><div class="dsig-label">Python</div>
+              <div class="dsig-val"><span class="py-dots"><span v-for="v in PY" :key="v" class="py-dot" :class="{ on: pyOn(selectedRepo, v) }" @mouseenter="tipShow($event, `Python ${v} — ${pyOn(selectedRepo, v) ? 'supported' : 'not supported'}`)" @mouseleave="tipHide"></span></span></div></div>
+            <div class="dsig"><div class="dsig-label">Hosts</div>
+              <div class="dsig-val hosts"><span class="host" :class="{ on: selectedRepo.packaging?.hosts?.rhino }">R</span><span class="host" :class="{ on: selectedRepo.packaging?.hosts?.ghpython }">GH</span><span class="host" :class="{ on: selectedRepo.packaging?.hosts?.blender }">B</span></div></div>
+          </div>
+
+          <div class="detail-block">
+            <div class="detail-block-label">Adoption</div>
+            <ul class="adopt-list">
+              <li v-for="f in features" :key="f.id" class="adopt-item">
+                <span class="adot" :class="featClass(featStatus(selectedRepo, f.id))"></span>
+                <span class="adopt-name">{{ f.label }}</span>
+                <span class="adopt-status" :class="featClass(featStatus(selectedRepo, f.id))">{{ featStatus(selectedRepo, f.id) }}</span>
+                <span v-if="selectedRepo.features?.[f.id]?.detail" class="adopt-detail mono">{{ selectedRepo.features[f.id].detail }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="detail-deps">
+            <div class="detail-block">
+              <div class="detail-block-label">Depends on</div>
+              <div class="dep-chips">
+                <button v-for="d in detailDeps" :key="d" class="dep-chip" @click="openDetail(d)">{{ d }}</button>
+                <span v-if="!detailDeps.length" class="muted">— none tracked</span>
+              </div>
+            </div>
+            <div class="detail-block">
+              <div class="detail-block-label">Used by</div>
+              <div class="dep-chips">
+                <button v-for="d in detailDependents" :key="d" class="dep-chip" @click="openDetail(d)">{{ d }}</button>
+                <span v-if="!detailDependents.length" class="muted">— none tracked</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-links">
+            <a class="dlink" :href="selectedRepo.url" target="_blank" rel="noopener">GitHub ↗</a>
+            <a v-if="pypiUrl(selectedRepo)" class="dlink" :href="pypiUrl(selectedRepo)" target="_blank" rel="noopener">PyPI ↗</a>
+            <a v-if="condaUrl(selectedRepo)" class="dlink" :href="condaUrl(selectedRepo)" target="_blank" rel="noopener">conda-forge ↗</a>
+          </div>
+
+          <div class="detail-block badge-block">
+            <div class="detail-block-label">Link the “Made with COMPAS” badge to this page</div>
+            <div v-for="b in BADGES" :key="b.id" class="badge-row">
+              <img :src="b.src" :alt="`Made with COMPAS — ${b.label}`" class="badge-img" />
+              <code class="badge-code mono">{{ badgeSnippet(selectedRepo, b.src) }}</code>
+              <button class="copy-btn" @click="copyBadge(selectedRepo, b)">{{ copied === b.id ? "✓ copied" : "copy" }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DASHBOARD ===== -->
+    <template v-else>
     <!-- KPI ribbon -->
     <div class="ribbon">
       <div class="kpi">
@@ -438,15 +578,19 @@ function onResize() {
         </div>
 
         <div v-if="g.open" class="card-grid">
-          <div v-for="r in g.repos" :key="r.name" class="card" :class="{ archived: r.status === 'archived' }">
+          <div v-for="r in g.repos" :key="r.name" class="card clickable" :class="{ archived: r.status === 'archived' }"
+               @click="openDetail(r.name)">
             <div class="card-stripe" :style="{ background: `var(--cat-${r.category})` }"></div>
             <div class="card-body">
               <div class="card-head">
                 <div class="card-head-left">
-                  <a class="card-name" :href="r.url" target="_blank" rel="noopener">{{ r.name }}</a>
+                  <a class="card-name" :href="r.url" target="_blank" rel="noopener" @click.stop>{{ r.name }}</a>
                   <span class="card-cat">{{ catLabel(r.category) }}<template v-if="r.role"> · {{ r.role }}</template></span>
                 </div>
-                <span class="card-stars">★ {{ r.stars ?? 0 }}</span>
+                <div class="card-head-right">
+                  <span class="card-stars">★ {{ r.stars ?? 0 }}</span>
+                  <span class="card-permalink" aria-hidden="true">›</span>
+                </div>
               </div>
 
               <div class="stat-grid">
@@ -462,24 +606,25 @@ function onResize() {
                 </div>
                 <div class="stat">
                   <span class="stat-label">Backlog</span>
-                  <span class="stat-val" title="open issues · open PRs">{{ r.health?.open_issues ?? "—" }} · {{ r.health?.open_prs ?? "—" }}</span>
+                  <span class="stat-val" @mouseenter="tipShow($event, 'open issues · open PRs')" @mouseleave="tipHide">{{ r.health?.open_issues ?? "—" }} · {{ r.health?.open_prs ?? "—" }}</span>
                 </div>
               </div>
 
               <div class="ver-block">
                 <div class="ver-row">
-                  <span class="pin" :class="pinInfo(r).cls" title="COMPAS-core pin">{{ pinInfo(r).text }}</span>
+                  <span class="pin" :class="pinInfo(r).cls" @mouseenter="tipShow($event, 'COMPAS-core pin')" @mouseleave="tipHide">{{ pinInfo(r).text }}</span>
                   <span v-if="relTag(r)" class="release">{{ relTag(r) }} · {{ relTime(r.release?.github_date || r.release?.pypi_date) }}</span>
-                  <span v-if="r.release?.drift" class="drift" :title="`GitHub ${r.release.github_tag} ≠ PyPI ${r.release.pypi_version}`">⚠ drift</span>
+                  <span v-if="r.release?.drift" class="drift" @mouseenter="tipShow($event, `GitHub ${r.release.github_tag} ≠ PyPI ${r.release.pypi_version}`)" @mouseleave="tipHide">⚠ drift</span>
                 </div>
                 <div class="support-row">
-                  <span class="py-dots" title="Python 3.9–3.13 support">
-                    <span v-for="v in PY" :key="v" class="py-dot" :class="{ on: pyOn(r, v) }"></span>
+                  <span class="py-dots">
+                    <span v-for="v in PY" :key="v" class="py-dot" :class="{ on: pyOn(r, v) }"
+                          @mouseenter="tipShow($event, `Python ${v} — ${pyOn(r, v) ? 'supported' : 'not supported'}`)" @mouseleave="tipHide"></span>
                   </span>
                   <span class="hosts">
-                    <span class="host" :class="{ on: r.packaging?.hosts?.rhino }" title="Rhino">R</span>
-                    <span class="host" :class="{ on: r.packaging?.hosts?.ghpython }" title="Grasshopper / GHPython">GH</span>
-                    <span class="host" :class="{ on: r.packaging?.hosts?.blender }" title="Blender">B</span>
+                    <span class="host" :class="{ on: r.packaging?.hosts?.rhino }" @mouseenter="tipShow($event, `Rhino — ${r.packaging?.hosts?.rhino ? 'yes' : 'no'}`)" @mouseleave="tipHide">R</span>
+                    <span class="host" :class="{ on: r.packaging?.hosts?.ghpython }" @mouseenter="tipShow($event, `Grasshopper / GHPython — ${r.packaging?.hosts?.ghpython ? 'yes' : 'no'}`)" @mouseleave="tipHide">GH</span>
+                    <span class="host" :class="{ on: r.packaging?.hosts?.blender }" @mouseenter="tipShow($event, `Blender — ${r.packaging?.hosts?.blender ? 'yes' : 'no'}`)" @mouseleave="tipHide">B</span>
                   </span>
                 </div>
               </div>
@@ -490,7 +635,8 @@ function onResize() {
                   <span
                     v-for="f in features" :key="f.id"
                     class="adot" :class="featClass(featStatus(r, f.id))"
-                    :title="`${f.label} — ${featStatus(r, f.id)}`"
+                    :aria-label="adoptTip(r, f)"
+                    @mouseenter="tipShow($event, adoptTip(r, f))" @mouseleave="tipHide"
                   ></span>
                 </div>
               </div>
@@ -499,7 +645,10 @@ function onResize() {
         </div>
       </div>
     </template>
+    </template>
 
     <footer class="pagefoot">COMPAS Mission Control · collected nightly from the GitHub &amp; PyPI APIs</footer>
+
+    <div v-if="tip.show" class="tooltip mono" :style="{ left: tip.x + 'px', top: tip.y + 'px' }">{{ tip.text }}</div>
   </template>
 </template>
