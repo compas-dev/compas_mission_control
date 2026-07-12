@@ -210,6 +210,14 @@ repos:
     category: structures
     tier: apps
 
+  # =======================================================================
+  # rafael pastrana
+  # =======================================================================
+  - name: compas_cem
+    owner: arpastrana
+    category: structures
+    pypi: compas_cem
+
   # ---- archived (kept for historical migration signal) ------------------
   - name: compas_view2
     category: viz
