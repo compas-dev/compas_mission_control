@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T23:34:03Z",
+  "generated_at": "2026-07-12T06:11:35Z",
   "features": [
     {
       "id": "compas2",
@@ -79,7 +79,7 @@
       "stars": 373,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-11",
+        "last_commit_date": "2026-07-12",
         "staleness": "fresh",
         "ci": "passing",
         "open_issues": 101,
@@ -336,9 +336,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "adopted",
@@ -346,9 +346,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -623,9 +623,9 @@
           "detail": "support: 3.8, 3.9, 3.10"
         },
         "new-scene-api": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "no match"
+          "detail": "code search failed"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -2527,7 +2527,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1747
+        "oldest_open_issue_age_days": 1748
       },
       "release": {
         "github_tag": "0.6.0",
@@ -4549,9 +4549,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -5527,19 +5527,21 @@
     }
   ],
   "warnings": [
-    "GET https://api.github.com/repos/blockresearchgroup/compas_skeleton/contents/mkdocs.yml -> HTTP 502",
-    "GET https://api.github.com/repos/gramaziokohler/compas_timber/contents/docs/conf.py -> HTTP 502",
-    "GET https://api.github.com/repos/gramaziokohler/compas_cadwork/contents/.github/workflows/ci.yml?ref=main -> HTTP 502",
-    "GET https://api.github.com/repos/gramaziokohler/compas_cadwork/contents/src?ref=main -> HTTP 502",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_eve&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_eve&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_xr&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-rrc%2Fcompas_rrc&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Ftekton+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/repos/gramaziokohler/compas_brep/contents/requirements.txt?ref=main -> HTTP 502",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_td+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_acoustics+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/repos/gramaziokohler/compas-make2d/contents/environment.yml?ref=main -> HTTP 502",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422"
