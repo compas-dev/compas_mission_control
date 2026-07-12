@@ -169,9 +169,6 @@ repos:
     owner: gramaziokohler
     category: timber
     pypi: compas_cadwork
-  - name: tekton               # COMPAS Timber ↔ Dlubal (RFEM/RSTAB); no reliable PyPI mapping
-    owner: gramaziokohler
-    category: timber
   - name: compas_pb
     owner: gramaziokohler
     category: tooling
@@ -180,15 +177,9 @@ repos:
     owner: gramaziokohler
     category: geometry
     pypi: compas_brep
-  - name: compas_td
-    owner: gramaziokohler
-    category: geometry
   - name: compas_threejs
     owner: gramaziokohler
     category: viz
-  - name: compas_acoustics
-    owner: gramaziokohler
-    category: other
   - name: compas-make2d
     owner: gramaziokohler
     category: tooling
