@@ -131,14 +131,14 @@
           "detail": "support: 3.9, 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "still uses 'compas.artists'"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -146,9 +146,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -1817,14 +1817,14 @@
           "detail": "support: 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "adopted",
@@ -1832,9 +1832,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -2016,9 +2016,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -2026,9 +2026,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -3305,9 +3305,9 @@
           "detail": "support: 3.9, 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "no match"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -3409,9 +3409,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -3808,9 +3808,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -3851,8 +3851,8 @@
         "oldest_open_issue_age_days": null
       },
       "release": {
-        "github_tag": null,
-        "github_date": null,
+        "github_tag": "0.3.1",
+        "github_date": "2024-05-14",
         "pypi_version": "0.3.1",
         "pypi_date": "2024-05-14",
         "drift": false
@@ -3914,9 +3914,9 @@
           "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "no comparable release"
+          "detail": "PyPI 0.3.1 = GitHub 0.3.1"
         },
         "conda-forge": {
           "status": "not-adopted",
