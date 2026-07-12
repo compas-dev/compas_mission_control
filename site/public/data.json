@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T08:42:35Z",
+  "generated_at": "2026-07-12T13:24:09Z",
   "features": [
     {
       "id": "compas2",
@@ -61,7 +61,7 @@
     "fea",
     "viz",
     "xr",
-    "apps",
+    "ai",
     "tooling",
     "template"
   ],
@@ -72,6 +72,7 @@
       "url": "https://github.com/compas-dev/compas",
       "category": "core",
       "tier": "core",
+      "pypi": "compas",
       "role": "core",
       "status": "active",
       "description": "Main library of the COMPAS framework and CAD integrations for Rhino/GH and Blender.",
@@ -160,8 +161,7 @@
           "detail": "conda-forge 2.15.1"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": "compas"
+      "ecosystem_deps": []
     },
     {
       "name": "compas_framework",
@@ -169,6 +169,7 @@
       "url": "https://github.com/compas-dev/compas_framework",
       "category": "core",
       "tier": "core",
+      "pypi": "compas_framework",
       "role": null,
       "status": "active",
       "description": "Meta package for the COMPAS Framework",
@@ -266,8 +267,205 @@
         "compas_session",
         "compas_shapeop",
         "compas_viewer"
-      ],
-      "pypi": "compas_framework"
+      ]
+    },
+    {
+      "name": "antikythera",
+      "owner": "gramaziokohler",
+      "url": "https://github.com/gramaziokohler/antikythera",
+      "category": "fabrication",
+      "tier": "apps",
+      "pypi": "antikythera-sdk",
+      "role": null,
+      "status": "active",
+      "description": null,
+      "stars": 2,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-07-07",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 1,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": 17
+      },
+      "release": {
+        "github_tag": "0.4.1",
+        "github_date": "2026-07-07",
+        "pypi_version": "0.4.1",
+        "pypi_date": "2026-07-07",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas <3,>=2",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.9",
+          "3.12",
+          "3.14"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": true,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas <3,>=2"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "still has docs/conf.py"
+        },
+        "invocations2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'compas_invocations2'"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.4.1 = GitHub 0.4.1"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas",
+        "compas_eve",
+        "compas_pb",
+        "compas_timber"
+      ]
+    },
+    {
+      "name": "compas_cnc",
+      "owner": "BRG-research",
+      "url": "https://github.com/BRG-research/compas_cnc",
+      "category": "fabrication",
+      "tier": "domain",
+      "pypi": "compas_cnc",
+      "role": null,
+      "status": "active",
+      "description": "A package for subtractive operations.",
+      "stars": 3,
+      "language": "nesC",
+      "health": {
+        "last_commit_date": "2026-07-09",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": "0.1.1",
+        "github_date": "2026-06-27",
+        "pypi_version": "0.1.1",
+        "pypi_date": "2026-06-27",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas >=2",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.12"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas >=2"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.12"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.12"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.12"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.1.1 = GitHub 0.1.1"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas",
+        "compas_viewer"
+      ]
     },
     {
       "name": "compas_eve",
@@ -275,6 +473,7 @@
       "url": "https://github.com/compas-dev/compas_eve",
       "category": "fabrication",
       "tier": "domain",
+      "pypi": "compas_eve",
       "role": null,
       "status": "active",
       "description": "COMPAS Event Extensions: adds event-based communication infrastructure to the COMPAS framework.",
@@ -286,7 +485,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 326
+        "oldest_open_issue_age_days": 327
       },
       "release": {
         "github_tag": "2.3.0",
@@ -364,8 +563,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_eve"
+      ]
     },
     {
       "name": "compas_fab",
@@ -373,6 +571,7 @@
       "url": "https://github.com/compas-dev/compas_fab",
       "category": "fabrication",
       "tier": "domain",
+      "pypi": "compas_fab",
       "role": null,
       "status": "active",
       "description": "Robotic fabrication package for the COMPAS Framework.",
@@ -384,7 +583,7 @@
         "ci": "passing",
         "open_issues": 74,
         "open_prs": 13,
-        "oldest_open_issue_age_days": 3146
+        "oldest_open_issue_age_days": 3147
       },
       "release": {
         "github_tag": "2.0.1",
@@ -462,8 +661,108 @@
       "ecosystem_deps": [
         "compas",
         "compas_robots"
-      ],
-      "pypi": "compas_fab"
+      ]
+    },
+    {
+      "name": "compas_nest",
+      "owner": "petrasvestartas",
+      "url": "https://github.com/petrasvestartas/compas_nest",
+      "category": "fabrication",
+      "tier": "domain",
+      "pypi": "compas_nest",
+      "role": null,
+      "status": "active",
+      "description": "https://petrasvestartas.github.io/compas_nest/",
+      "stars": 0,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-06-14",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": null,
+        "github_date": null,
+        "pypi_version": "0.1.1.post4",
+        "pypi_date": "2026-06-14",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas <3,>=2.15",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.9",
+          "3.10",
+          "3.11",
+          "3.12",
+          "3.13"
+        ],
+        "python_source": "requires-python",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas <3,>=2.15"
+        },
+        "py311": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12, 3.13"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12, 3.13"
+        },
+        "py313": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12, 3.13"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "unknown",
+          "source": "auto",
+          "detail": "no comparable release"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas",
+        "compas_viewer"
+      ]
     },
     {
       "name": "compas_robots",
@@ -471,6 +770,7 @@
       "url": "https://github.com/compas-dev/compas_robots",
       "category": "fabrication",
       "tier": "domain",
+      "pypi": "compas_robots",
       "role": null,
       "status": "active",
       "description": "Basic infrastructure for working with robots in COMPAS.",
@@ -561,8 +861,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_robots"
+      ]
     },
     {
       "name": "compas_rrc",
@@ -570,6 +869,7 @@
       "url": "https://github.com/compas-rrc/compas_rrc",
       "category": "fabrication",
       "tier": "domain",
+      "pypi": "compas_rrc",
       "role": null,
       "status": "active",
       "description": "Online control for ABB robots over a simple-to-use Python interface.",
@@ -581,7 +881,7 @@
         "ci": "none",
         "open_issues": 13,
         "open_prs": 2,
-        "oldest_open_issue_age_days": 2014
+        "oldest_open_issue_age_days": 2015
       },
       "release": {
         "github_tag": "2.0.0",
@@ -659,8 +959,7 @@
       },
       "ecosystem_deps": [
         "compas_fab"
-      ],
-      "pypi": "compas_rrc"
+      ]
     },
     {
       "name": "compas_slicer",
@@ -668,6 +967,7 @@
       "url": "https://github.com/compas-dev/compas_slicer",
       "category": "fabrication",
       "tier": "domain",
+      "pypi": "compas_slicer",
       "role": null,
       "status": "active",
       "description": "Slicing package for FDM 3D Printing with COMPAS.",
@@ -679,7 +979,7 @@
         "ci": "passing",
         "open_issues": 3,
         "open_prs": 3,
-        "oldest_open_issue_age_days": 430
+        "oldest_open_issue_age_days": 431
       },
       "release": {
         "github_tag": "0.8.0",
@@ -760,8 +1060,105 @@
       "ecosystem_deps": [
         "compas",
         "compas_cgal"
-      ],
-      "pypi": "compas_slicer"
+      ]
+    },
+    {
+      "name": "digital_casting_system",
+      "owner": "USI-FMAA",
+      "url": "https://github.com/USI-FMAA/digital_casting_system",
+      "category": "fabrication",
+      "tier": "domain",
+      "pypi": "digital_casting_system",
+      "role": null,
+      "status": "active",
+      "description": "Core package for Digital Casting system",
+      "stars": 0,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2025-09-06",
+        "staleness": "stale",
+        "ci": "passing",
+        "open_issues": 3,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": 315
+      },
+      "release": {
+        "github_tag": "0.1.5",
+        "github_date": "2025-08-30",
+        "pypi_version": "0.1.5",
+        "pypi_date": "2025-08-30",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas <=2.9.0",
+        "compas_major_floor": null,
+        "python_versions": [
+          "3.10",
+          "3.11",
+          "3.12"
+        ],
+        "python_source": "classifiers",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "unknown",
+          "source": "auto",
+          "detail": "compas <=2.9.0"
+        },
+        "py311": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.1.5 = GitHub 0.1.5"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas"
+      ]
     },
     {
       "name": "compas_cadwork",
@@ -769,6 +1166,7 @@
       "url": "https://github.com/gramaziokohler/compas_cadwork",
       "category": "timber",
       "tier": "domain",
+      "pypi": "compas_cadwork",
       "role": null,
       "status": "active",
       "description": null,
@@ -859,8 +1257,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_timber"
-      ],
-      "pypi": "compas_cadwork"
+      ]
     },
     {
       "name": "compas_timber",
@@ -868,6 +1265,7 @@
       "url": "https://github.com/gramaziokohler/compas_timber",
       "category": "timber",
       "tier": "domain",
+      "pypi": "compas_timber",
       "role": null,
       "status": "active",
       "description": null,
@@ -879,7 +1277,7 @@
         "ci": "passing",
         "open_issues": 69,
         "open_prs": 17,
-        "oldest_open_issue_age_days": 907
+        "oldest_open_issue_age_days": 908
       },
       "release": {
         "github_tag": "2.2.0",
@@ -959,8 +1357,204 @@
         "compas",
         "compas_brep",
         "compas_model"
-      ],
-      "pypi": "compas_timber"
+      ]
+    },
+    {
+      "name": "compas_timber_pb",
+      "owner": "gramaziokohler",
+      "url": "https://github.com/gramaziokohler/compas_timber_pb",
+      "category": "timber",
+      "tier": "domain",
+      "pypi": "compas_timber_pb",
+      "role": null,
+      "status": "active",
+      "description": "COMPAS Timber plugin for COMPAS Protobuf",
+      "stars": 0,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2025-09-15",
+        "staleness": "stale",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": "0.2.0",
+        "github_date": "2025-09-15",
+        "pypi_version": "0.2.0",
+        "pypi_date": "2025-09-15",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": null,
+        "compas_major_floor": null,
+        "python_versions": [
+          "3.10",
+          "3.11",
+          "3.12"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "n/a",
+          "source": "auto",
+          "detail": "no compas dependency"
+        },
+        "py311": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "missing mkdocs.yml"
+        },
+        "invocations2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'compas_invocations2'"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.2.0 = GitHub 0.2.0"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas_pb",
+        "compas_timber"
+      ]
+    },
+    {
+      "name": "timber_design",
+      "owner": "gramaziokohler",
+      "url": "https://github.com/gramaziokohler/timber_design",
+      "category": "timber",
+      "tier": "apps",
+      "pypi": "timber_design",
+      "role": null,
+      "status": "active",
+      "description": "Automation toolkit for the design of timber structures based on COMPAS timber",
+      "stars": 2,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-07-10",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 3,
+        "open_prs": 5,
+        "oldest_open_issue_age_days": 44
+      },
+      "release": {
+        "github_tag": "0.3.1",
+        "github_date": "2026-07-09",
+        "pypi_version": "0.3.1",
+        "pypi_date": "2026-07-09",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": null,
+        "compas_major_floor": null,
+        "python_versions": [
+          "3.9",
+          "3.12",
+          "3.14"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": true,
+          "ghpython": true,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "n/a",
+          "source": "auto",
+          "detail": "no compas dependency"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.12, 3.14"
+        },
+        "new-scene-api": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'from compas.scene import Scene'"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'compas_invocations2'"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.3.1 = GitHub 0.3.1"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas_timber"
+      ]
     },
     {
       "name": "compas_brep",
@@ -968,6 +1562,7 @@
       "url": "https://github.com/gramaziokohler/compas_brep",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_brep",
       "role": null,
       "status": "active",
       "description": "COMPAS based, pip installable, operation level Brep wrapper for OCC(OCP) and RhinoBrep",
@@ -1059,8 +1654,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_brep"
+      ]
     },
     {
       "name": "compas_cgal",
@@ -1068,6 +1662,7 @@
       "url": "https://github.com/compas-dev/compas_cgal",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_cgal",
       "role": null,
       "status": "active",
       "description": "COMPAS package for working with CGAL.",
@@ -1156,8 +1751,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_viewer"
-      ],
-      "pypi": "compas_cgal"
+      ]
     },
     {
       "name": "compas_gmsh",
@@ -1165,6 +1759,7 @@
       "url": "https://github.com/compas-dev/compas_gmsh",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_gmsh",
       "role": null,
       "status": "active",
       "description": "COMPAS interface for Gmsh",
@@ -1254,8 +1849,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_gmsh"
+      ]
     },
     {
       "name": "compas_ifc",
@@ -1263,6 +1857,7 @@
       "url": "https://github.com/compas-dev/compas_ifc",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_ifc",
       "role": null,
       "status": "active",
       "description": "COMPAS package for working with IFC files",
@@ -1274,7 +1869,7 @@
         "ci": "passing",
         "open_issues": 4,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 839
+        "oldest_open_issue_age_days": 840
       },
       "release": {
         "github_tag": "2.0.0",
@@ -1352,8 +1947,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_model"
-      ],
-      "pypi": "compas_ifc"
+      ]
     },
     {
       "name": "compas_libigl",
@@ -1361,6 +1955,7 @@
       "url": "https://github.com/compas-dev/compas_libigl",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_libigl",
       "role": null,
       "status": "active",
       "description": "COMPAS bindings for libigl.",
@@ -1448,8 +2043,103 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_libigl"
+      ]
+    },
+    {
+      "name": "compas_manifold",
+      "owner": "petrasvestartas",
+      "url": "https://github.com/petrasvestartas/compas_manifold",
+      "category": "geometry",
+      "tier": "foundation",
+      "pypi": "compas_manifold",
+      "role": null,
+      "status": "active",
+      "description": "Minimal Manifold library wrapper for mesh booleans.",
+      "stars": 0,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-06-18",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": null,
+        "github_date": null,
+        "pypi_version": "0.1.0",
+        "pypi_date": "2026-06-18",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas <3,>=2.15",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.10"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas <3,>=2.15"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "py312": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "unknown",
+          "source": "auto",
+          "detail": "no comparable release"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas"
+      ]
     },
     {
       "name": "compas_nurbs",
@@ -1457,6 +2147,7 @@
       "url": "https://github.com/compas-dev/compas_nurbs",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_nurbs",
       "role": null,
       "status": "active",
       "description": "NURBS for COMPAS",
@@ -1468,7 +2159,7 @@
         "ci": "failing",
         "open_issues": 15,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 2147
+        "oldest_open_issue_age_days": 2148
       },
       "release": {
         "github_tag": null,
@@ -1546,8 +2237,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_nurbs"
+      ]
     },
     {
       "name": "compas_occ",
@@ -1555,6 +2245,7 @@
       "url": "https://github.com/compas-dev/compas_occ",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_occ",
       "role": null,
       "status": "active",
       "description": "COMPAS wrapper for the Python bindings of OCC",
@@ -1645,8 +2336,106 @@
       "ecosystem_deps": [
         "compas",
         "compas_viewer"
-      ],
-      "pypi": "compas_occ"
+      ]
+    },
+    {
+      "name": "compas_occt",
+      "owner": "petrasvestartas",
+      "url": "https://github.com/petrasvestartas/compas_occt",
+      "category": "geometry",
+      "tier": "foundation",
+      "pypi": "compas_occt",
+      "role": null,
+      "status": "active",
+      "description": "https://petrasvestartas.github.io/compas_occt",
+      "stars": 2,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-06-28",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": "0.1.18",
+        "github_date": "2026-06-28",
+        "pypi_version": "0.1.18",
+        "pypi_date": "2026-06-28",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas >=2",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.9",
+          "3.10",
+          "3.11",
+          "3.12"
+        ],
+        "python_source": "classifiers",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas >=2"
+        },
+        "py311": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.9, 3.10, 3.11, 3.12"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'compas_invocations2'"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.1.18 = GitHub 0.1.18"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas"
+      ]
     },
     {
       "name": "compas_shapeop",
@@ -1654,6 +2443,7 @@
       "url": "https://github.com/compas-dev/compas_shapeop",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_shapeop",
       "role": null,
       "status": "active",
       "description": "COMPAS binding for the ShapeOp library using nanobind",
@@ -1741,8 +2531,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_shapeop"
+      ]
     },
     {
       "name": "compas_skeleton",
@@ -1750,6 +2539,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_skeleton",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_skeleton",
       "role": null,
       "status": "active",
       "description": "Mesh generation based on skeleton lines.",
@@ -1839,8 +2629,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_skeleton"
+      ]
     },
     {
       "name": "compas_triangle",
@@ -1848,6 +2637,7 @@
       "url": "https://github.com/compas-dev/compas_triangle",
       "category": "geometry",
       "tier": "foundation",
+      "pypi": "compas_triangle",
       "role": null,
       "status": "active",
       "description": "COMPAS bindings for the triangle library.",
@@ -1920,9 +2710,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -1937,8 +2727,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_triangle"
+      ]
     },
     {
       "name": "compas-FoFin",
@@ -1946,6 +2735,7 @@
       "url": "https://github.com/BlockResearchGroup/compas-FoFin",
       "category": "structures",
       "tier": "apps",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Rhino plugin for form finding of tension-only, compression-only, and mixed tension-compression structures with axial forces, using constrained force-density and dynamic relaxation solvers.",
@@ -1957,7 +2747,7 @@
         "ci": "passing",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1152
+        "oldest_open_issue_age_days": 1153
       },
       "release": {
         "github_tag": "0.15.3",
@@ -2037,8 +2827,7 @@
         "compas_fd",
         "compas_rui",
         "compas_session"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas-IGS",
@@ -2046,6 +2835,7 @@
       "url": "https://github.com/BlockResearchGroup/compas-IGS",
       "category": "structures",
       "tier": "apps",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Rhino plugin for Interactive Graphic Statics using an algebraic graph-based approach to graphic statics",
@@ -2057,7 +2847,7 @@
         "ci": "none",
         "open_issues": 1,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1317
+        "oldest_open_issue_age_days": 1318
       },
       "release": {
         "github_tag": "0.2.1",
@@ -2137,8 +2927,7 @@
         "compas_occ",
         "compas_rui",
         "compas_session"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas-Masonry",
@@ -2146,6 +2935,7 @@
       "url": "https://github.com/BlockResearchGroup/compas-Masonry",
       "category": "structures",
       "tier": "apps",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Rhino plugin for the design and equilibrium analysis of block models and for the stability assessment of (historic) masonry structures.",
@@ -2243,8 +3033,7 @@
         "compas_session",
         "compas_tna",
         "compas_tno"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas-RV",
@@ -2252,6 +3041,7 @@
       "url": "https://github.com/BlockResearchGroup/compas-RV",
       "category": "structures",
       "tier": "apps",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Rhino plugin for form finding of spatial networks of compression forces in equilibrium with vertical loads using two-dimensional, reciprocal form and force diagrams.",
@@ -2347,8 +3137,7 @@
         "compas_skeleton",
         "compas_tna",
         "compas_triangle"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas_3gs",
@@ -2356,6 +3145,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_3gs",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_3gs",
       "role": null,
       "status": "active",
       "description": "3D graphic statics add-on for the COMPAS framework",
@@ -2448,8 +3238,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_skeleton"
-      ],
-      "pypi": "compas_3gs"
+      ]
     },
     {
       "name": "compas_ags",
@@ -2457,6 +3246,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_ags",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_ags",
       "role": null,
       "status": "active",
       "description": "Design and Analysis of 2D structures using algebraic graphic statics",
@@ -2547,8 +3337,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_ags"
+      ]
     },
     {
       "name": "compas_assembly",
@@ -2556,6 +3345,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_assembly",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_assembly",
       "role": null,
       "status": "active",
       "description": "Assembly data structures for the COMPAS framework.",
@@ -2567,7 +3357,7 @@
         "ci": "none",
         "open_issues": 4,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 2550
+        "oldest_open_issue_age_days": 2551
       },
       "release": {
         "github_tag": "0.7.1",
@@ -2646,8 +3436,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_assembly"
+      ]
     },
     {
       "name": "compas_bender",
@@ -2655,6 +3444,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_bender",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_bender",
       "role": null,
       "status": "active",
       "description": null,
@@ -2744,8 +3534,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_bender"
+      ]
     },
     {
       "name": "compas_cem",
@@ -2753,6 +3542,7 @@
       "url": "https://github.com/arpastrana/compas_cem",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_cem",
       "role": null,
       "status": "active",
       "description": "Inverse design of 3D truss networks with automatic differentiation",
@@ -2840,8 +3630,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_cem"
+      ]
     },
     {
       "name": "compas_cra",
@@ -2849,6 +3638,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_cra",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_cra",
       "role": null,
       "status": "active",
       "description": "Coupled Rigid-Block Analysis: Stability-Aware Design of Complex Discrete-Element Assemblies",
@@ -2937,8 +3727,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_assembly"
-      ],
-      "pypi": "compas_cra"
+      ]
     },
     {
       "name": "compas_dem",
@@ -2946,6 +3735,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_dem",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_dem",
       "role": null,
       "status": "active",
       "description": "COMPAS Models for Discrete element Modelling",
@@ -3038,8 +3828,7 @@
         "compas_cgal",
         "compas_libigl",
         "compas_model"
-      ],
-      "pypi": "compas_dem"
+      ]
     },
     {
       "name": "compas_dr",
@@ -3047,6 +3836,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_dr",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_dr",
       "role": null,
       "status": "active",
       "description": "Constrained form finding using the Dynamic Relaxation Method.",
@@ -3136,8 +3926,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_dr"
+      ]
     },
     {
       "name": "compas_fd",
@@ -3145,6 +3934,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_fd",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_fd",
       "role": null,
       "status": "active",
       "description": "Constrained form finding using the Force Density Method.",
@@ -3156,7 +3946,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 5,
-        "oldest_open_issue_age_days": 872
+        "oldest_open_issue_age_days": 873
       },
       "release": {
         "github_tag": "0.5.4",
@@ -3234,8 +4024,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_fd"
+      ]
     },
     {
       "name": "compas_lmgc90",
@@ -3243,6 +4032,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_lmgc90",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_lmgc90",
       "role": null,
       "status": "active",
       "description": "COMPAS friendly binding/wrapper for LMGC90",
@@ -3335,8 +4125,7 @@
         "compas",
         "compas_dem",
         "compas_viewer"
-      ],
-      "pypi": "compas_lmgc90"
+      ]
     },
     {
       "name": "compas_model",
@@ -3344,6 +4133,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_model",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_model",
       "role": null,
       "status": "active",
       "description": "A universal model datastructure for design, analysis, fabrication, and construction",
@@ -3435,8 +4225,7 @@
         "compas",
         "compas_occ",
         "compas_viewer"
-      ],
-      "pypi": "compas_model"
+      ]
     },
     {
       "name": "compas_rbe",
@@ -3444,6 +4233,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_rbe",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_rbe",
       "role": null,
       "status": "active",
       "description": "Rigid Block Equilibrium Analysis for the COMPAS framework",
@@ -3534,8 +4324,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_rbe"
+      ]
     },
     {
       "name": "compas_tna",
@@ -3543,6 +4332,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_tna",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_tna",
       "role": null,
       "status": "active",
       "description": "Form finding of funicular networks in compression with vertical loads using Thrust Network Analysis",
@@ -3634,8 +4424,7 @@
       "ecosystem_deps": [
         "compas",
         "compas_fd"
-      ],
-      "pypi": "compas_tna"
+      ]
     },
     {
       "name": "compas_tno",
@@ -3643,6 +4432,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_tno",
       "category": "structures",
       "tier": "domain",
+      "pypi": "compas_tno",
       "role": null,
       "status": "active",
       "description": "Solvers for finding admissible thrust networks in vaulted masonry structures",
@@ -3654,7 +4444,7 @@
         "ci": "failing",
         "open_issues": 3,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1146
+        "oldest_open_issue_age_days": 1147
       },
       "release": {
         "github_tag": "0.3.0",
@@ -3735,8 +4525,103 @@
         "compas",
         "compas_occ",
         "compas_tna"
-      ],
-      "pypi": "compas_tno"
+      ]
+    },
+    {
+      "name": "jax_fdm",
+      "owner": "arpastrana",
+      "url": "https://github.com/arpastrana/jax_fdm",
+      "category": "structures",
+      "tier": "domain",
+      "pypi": "jax_fdm",
+      "role": null,
+      "status": "active",
+      "description": "Auto-differentiable and hardware-accelerated force density method",
+      "stars": 117,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-07-11",
+        "staleness": "fresh",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": "0.11.0",
+        "github_date": "2026-07-04",
+        "pypi_version": "0.11.0",
+        "pypi_date": "2026-07-04",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": "compas <3.0,>=2.15",
+        "compas_major_floor": 2,
+        "python_versions": [
+          "3.10"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "compas <3.0,>=2.15"
+        },
+        "py311": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "py312": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "py313": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.10"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "still uses 'compas.artists'"
+        },
+        "mkdocs": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
+        },
+        "invocations2": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "matched 'compas_invocations2'"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.11.0 = GitHub 0.11.0"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": [
+        "compas"
+      ]
     },
     {
       "name": "compas_fea",
@@ -3744,6 +4629,7 @@
       "url": "https://github.com/compas-dev/compas_fea",
       "category": "fea",
       "tier": "domain",
+      "pypi": "compas_fea",
       "role": null,
       "status": "archived",
       "description": "COMPAS interface to common Finite Element Analysis software.",
@@ -3834,8 +4720,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_fea"
+      ]
     },
     {
       "name": "compas_fea2",
@@ -3843,6 +4728,7 @@
       "url": "https://github.com/compas-dev/compas_fea2",
       "category": "fea",
       "tier": "domain",
+      "pypi": "compas_fea2",
       "role": null,
       "status": "active",
       "description": "Finite Element Analysis toolbox for the COMPAS framework.",
@@ -3934,8 +4820,7 @@
         "compas",
         "compas_gmsh",
         "compas_viewer"
-      ],
-      "pypi": "compas_fea2"
+      ]
     },
     {
       "name": "compas_notebook",
@@ -3943,6 +4828,7 @@
       "url": "https://github.com/compas-dev/compas_notebook",
       "category": "viz",
       "tier": "visualizers",
+      "pypi": "compas_notebook",
       "role": null,
       "status": "active",
       "description": "Visualisation of COMPAS objects in Jupyter notebooks",
@@ -4032,8 +4918,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_notebook"
+      ]
     },
     {
       "name": "compas_plotter",
@@ -4041,6 +4926,7 @@
       "url": "https://github.com/compas-dev/compas_plotter",
       "category": "viz",
       "tier": "visualizers",
+      "pypi": "compas_plotter",
       "role": null,
       "status": "active",
       "description": null,
@@ -4129,8 +5015,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_plotter"
+      ]
     },
     {
       "name": "compas_threejs",
@@ -4138,6 +5023,7 @@
       "url": "https://github.com/gramaziokohler/compas_threejs",
       "category": "viz",
       "tier": "visualizers",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": null,
@@ -4229,8 +5115,7 @@
         "compas",
         "compas_brep",
         "compas_pb"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas_view2",
@@ -4238,6 +5123,7 @@
       "url": "https://github.com/compas-dev/compas_view2",
       "category": "viz",
       "tier": "visualizers",
+      "pypi": "compas_view2",
       "role": null,
       "status": "archived",
       "description": "Standalone viewer for COMPAS",
@@ -4249,7 +5135,7 @@
         "ci": "none",
         "open_issues": 29,
         "open_prs": 4,
-        "oldest_open_issue_age_days": 2000
+        "oldest_open_issue_age_days": 2001
       },
       "release": {
         "github_tag": "0.11.0",
@@ -4325,8 +5211,7 @@
           "detail": "conda-forge 0.11.0"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": "compas_view2"
+      "ecosystem_deps": []
     },
     {
       "name": "compas_viewer",
@@ -4334,6 +5219,7 @@
       "url": "https://github.com/compas-dev/compas_viewer",
       "category": "viz",
       "tier": "visualizers",
+      "pypi": "compas_viewer",
       "role": null,
       "status": "active",
       "description": "Viewer for COMPAS based on PyOpenGL and PySide6.",
@@ -4345,7 +5231,7 @@
         "ci": "failing",
         "open_issues": 44,
         "open_prs": 9,
-        "oldest_open_issue_age_days": 915
+        "oldest_open_issue_age_days": 916
       },
       "release": {
         "github_tag": "2.0.2",
@@ -4423,8 +5309,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_viewer"
+      ]
     },
     {
       "name": "compas_xr",
@@ -4432,6 +5317,7 @@
       "url": "https://github.com/compas-dev/compas_xr",
       "category": "xr",
       "tier": "domain",
+      "pypi": "compas_xr",
       "role": null,
       "status": "active",
       "description": "COMPAS XR streamlines extended reality workflows to ease the implementation of human-machine collaborative applications in architectural research and educational environments.",
@@ -4526,47 +5412,45 @@
         "compas_invocations2",
         "compas_timber",
         "sphinx_compas2_theme"
-      ],
-      "pypi": "compas_xr"
+      ]
     },
     {
-      "name": "antikythera",
+      "name": "aixd_ara",
       "owner": "gramaziokohler",
-      "url": "https://github.com/gramaziokohler/antikythera",
-      "category": "apps",
+      "url": "https://github.com/gramaziokohler/aixd_ara",
+      "category": "ai",
       "tier": "apps",
+      "pypi": "aixd_ara",
       "role": null,
       "status": "active",
-      "description": null,
-      "stars": 2,
+      "description": "ARA: Grasshopper plugin for AIXD toolkit",
+      "stars": 11,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-07",
-        "staleness": "fresh",
+        "last_commit_date": "2025-11-17",
+        "staleness": "stale",
         "ci": "passing",
-        "open_issues": 1,
+        "open_issues": 12,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 17
+        "oldest_open_issue_age_days": 816
       },
       "release": {
-        "github_tag": "0.4.1",
-        "github_date": "2026-07-07",
-        "pypi_version": null,
-        "pypi_date": null,
+        "github_tag": "0.10.6",
+        "github_date": "2025-02-25",
+        "pypi_version": "0.10.6",
+        "pypi_date": "2025-02-25",
         "drift": false
       },
       "packaging": {
-        "compas_pin": "compas <3,>=2",
+        "compas_pin": "compas <3,>2",
         "compas_major_floor": 2,
         "python_versions": [
-          "3.9",
-          "3.12",
-          "3.14"
+          "3.11"
         ],
         "python_source": "ci-matrix",
         "hosts": {
           "rhino": false,
-          "ghpython": true,
+          "ghpython": false,
           "blender": false
         }
       },
@@ -4574,22 +5458,22 @@
         "compas2": {
           "status": "adopted",
           "source": "auto",
-          "detail": "compas <3,>=2"
+          "detail": "compas <3,>2"
         },
         "py311": {
-          "status": "not-adopted",
-          "source": "auto",
-          "detail": "support: 3.9, 3.12, 3.14"
-        },
-        "py312": {
           "status": "adopted",
           "source": "auto",
-          "detail": "support: 3.9, 3.12, 3.14"
+          "detail": "support: 3.11"
+        },
+        "py312": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "support: 3.11"
         },
         "py313": {
           "status": "not-adopted",
           "source": "auto",
-          "detail": "support: 3.9, 3.12, 3.14"
+          "detail": "support: 3.11"
         },
         "new-scene-api": {
           "status": "not-adopted",
@@ -4604,31 +5488,27 @@
         "mkdocs": {
           "status": "not-adopted",
           "source": "auto",
-          "detail": "still has docs/conf.py"
+          "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "no match"
         },
         "pypi-match": {
-          "status": "n/a",
+          "status": "adopted",
           "source": "auto",
-          "detail": "not distributed on PyPI"
+          "detail": "PyPI 0.10.6 = GitHub 0.10.6"
         },
         "conda-forge": {
-          "status": "n/a",
+          "status": "adopted",
           "source": "auto",
-          "detail": "not distributed on PyPI/conda"
+          "detail": "conda-forge 0.10.6"
         }
       },
       "ecosystem_deps": [
-        "compas",
-        "compas_eve",
-        "compas_pb",
-        "compas_timber"
-      ],
-      "pypi": "antikythera-sdk"
+        "compas"
+      ]
     },
     {
       "name": "compas-make2d",
@@ -4636,6 +5516,7 @@
       "url": "https://github.com/gramaziokohler/compas-make2d",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": null,
@@ -4727,8 +5608,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": null
+      ]
     },
     {
       "name": "compas-switcher",
@@ -4736,6 +5616,7 @@
       "url": "https://github.com/gramaziokohler/compas-switcher",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Compas environment switching and Grasshopper component installation GUI tool. ",
@@ -4819,8 +5700,7 @@
           "detail": "not distributed on PyPI/conda"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": null
+      "ecosystem_deps": []
     },
     {
       "name": "compas_invocations2",
@@ -4828,6 +5708,7 @@
       "url": "https://github.com/compas-dev/compas_invocations2",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": "compas_invocations2",
       "role": null,
       "status": "active",
       "description": "Automation of (opinionated) dev tasks",
@@ -4839,7 +5720,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 598
+        "oldest_open_issue_age_days": 599
       },
       "release": {
         "github_tag": "1.1.2",
@@ -4914,8 +5795,7 @@
           "detail": "no conda-forge package"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": "compas_invocations2"
+      "ecosystem_deps": []
     },
     {
       "name": "compas_pb",
@@ -4923,6 +5803,7 @@
       "url": "https://github.com/gramaziokohler/compas_pb",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": "compas_pb",
       "role": null,
       "status": "active",
       "description": "A COMPAS extension which lets you serialize and deserialize COMPAS Data types using protobuf.",
@@ -5014,8 +5895,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_pb"
+      ]
     },
     {
       "name": "compas_rui",
@@ -5023,6 +5903,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_rui",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": "compas_rui",
       "role": null,
       "status": "active",
       "description": "Collection of components to build graphical user interfaces (GUIs) in Rhino 8 for COMPAS packages.",
@@ -5108,8 +5989,7 @@
           "detail": "no conda-forge package"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": "compas_rui"
+      "ecosystem_deps": []
     },
     {
       "name": "compas_session",
@@ -5117,6 +5997,7 @@
       "url": "https://github.com/BlockResearchGroup/compas_session",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": "compas_session",
       "role": null,
       "status": "active",
       "description": "Session management for COMPAS workflows and tools",
@@ -5207,8 +6088,104 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "compas_session"
+      ]
+    },
+    {
+      "name": "lamcp",
+      "owner": "gramaziokohler",
+      "url": "https://github.com/gramaziokohler/lamcp",
+      "category": "tooling",
+      "tier": "tooling",
+      "pypi": "lamcp",
+      "role": null,
+      "status": "active",
+      "description": "LAmbda MCP: teach your LLM to do Grasshopper tricks",
+      "stars": 16,
+      "language": "Python",
+      "health": {
+        "last_commit_date": "2026-06-12",
+        "staleness": "aging",
+        "ci": "passing",
+        "open_issues": 0,
+        "open_prs": 0,
+        "oldest_open_issue_age_days": null
+      },
+      "release": {
+        "github_tag": "0.7.1",
+        "github_date": "2026-06-12",
+        "pypi_version": "0.7.1",
+        "pypi_date": "2026-06-12",
+        "drift": false
+      },
+      "packaging": {
+        "compas_pin": null,
+        "compas_major_floor": null,
+        "python_versions": [
+          "3.10",
+          "3.11",
+          "3.12",
+          "3.13"
+        ],
+        "python_source": "ci-matrix",
+        "hosts": {
+          "rhino": false,
+          "ghpython": false,
+          "blender": false
+        }
+      },
+      "features": {
+        "compas2": {
+          "status": "n/a",
+          "source": "auto",
+          "detail": "no compas dependency"
+        },
+        "py311": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12, 3.13"
+        },
+        "py312": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12, 3.13"
+        },
+        "py313": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "support: 3.10, 3.11, 3.12, 3.13"
+        },
+        "new-scene-api": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "no-deprecated-artist": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "clean"
+        },
+        "mkdocs": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "missing mkdocs.yml"
+        },
+        "invocations2": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no match"
+        },
+        "pypi-match": {
+          "status": "adopted",
+          "source": "auto",
+          "detail": "PyPI 0.7.1 = GitHub 0.7.1"
+        },
+        "conda-forge": {
+          "status": "not-adopted",
+          "source": "auto",
+          "detail": "no conda-forge package"
+        }
+      },
+      "ecosystem_deps": []
     },
     {
       "name": "sphinx_compas2_theme",
@@ -5216,6 +6193,7 @@
       "url": "https://github.com/compas-dev/sphinx_compas2_theme",
       "category": "tooling",
       "tier": "tooling",
+      "pypi": "sphinx_compas2_theme",
       "role": null,
       "status": "active",
       "description": "Sphinx theme for COMPAS 2 based on pydata-sphinx-theme and sphinx-book-theme",
@@ -5305,8 +6283,7 @@
       },
       "ecosystem_deps": [
         "compas"
-      ],
-      "pypi": "sphinx_compas2_theme"
+      ]
     },
     {
       "name": "compas_package_template",
@@ -5314,6 +6291,7 @@
       "url": "https://github.com/compas-dev/compas_package_template",
       "category": "template",
       "tier": "tooling",
+      "pypi": null,
       "role": null,
       "status": "active",
       "description": "Cookiecutter template for COMPAS extensions.",
@@ -5325,7 +6303,7 @@
         "ci": "none",
         "open_issues": 6,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1872
+        "oldest_open_issue_age_days": 1873
       },
       "release": {
         "github_tag": null,
@@ -5397,9 +6375,10 @@
           "detail": "not distributed on PyPI/conda"
         }
       },
-      "ecosystem_deps": [],
-      "pypi": null
+      "ecosystem_deps": []
     }
   ],
-  "warnings": []
+  "warnings": [
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_triangle&per_page=1 -> HTTP 503"
+  ]
 }
