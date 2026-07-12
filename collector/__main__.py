@@ -43,7 +43,7 @@ TIER_BY_CATEGORY = {
     "fea": "domain",
     "xr": "domain",
     "other": "domain",
-    "viz": "apps",
+    "viz": "visualizers",
     "apps": "apps",
     "tooling": "tooling",
     "template": "tooling",
