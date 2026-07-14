@@ -112,8 +112,6 @@ function toggleCollapse(k) {
   collapsed.value = s;
 }
 function setQuick(q) { quick.value = quick.value === q ? null : q; }
-function openRepo(r) { if (r.url) window.open(r.url, "_blank", "noopener"); }
-
 // ---- helpers ---------------------------------------------------------
 function daysSince(ds) {
   if (!ds) return null;
@@ -559,7 +557,7 @@ async function copyBadge(r, b) {
               class="node" :class="['cat-' + r.category, nodeClass(r), { archived: r.status === 'archived' }]"
               :data-node="r.name"
               @mouseenter="onNodeEnter(r.name)" @focus="onNodeEnter(r.name)"
-              @click="openRepo(r)" :title="r.description || r.name"
+              @click="openDetail(r.name)" :title="r.description || r.name"
             >
               <span class="node-dot"></span>
               <span>{{ r.name }}</span>
