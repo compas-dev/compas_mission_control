@@ -7,7 +7,7 @@
       "open_issues": 100,
       "open_prs": 18,
       "compas_major_floor": null,
-      "features_adopted": 4
+      "features_adopted": 6
     },
     "compas_framework": {
       "staleness": "dormant",
@@ -15,7 +15,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 4
+      "features_adopted": 6
     },
     "antikythera": {
       "staleness": "fresh",
@@ -39,7 +39,7 @@
       "open_issues": 1,
       "open_prs": 1,
       "compas_major_floor": 1,
-      "features_adopted": 5
+      "features_adopted": 7
     },
     "compas_fab": {
       "staleness": "fresh",
@@ -47,7 +47,7 @@
       "open_issues": 74,
       "open_prs": 5,
       "compas_major_floor": 2,
-      "features_adopted": 5
+      "features_adopted": 8
     },
     "compas_nest": {
       "staleness": "aging",
@@ -63,7 +63,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 9
     },
     "compas_rrc": {
       "staleness": "dormant",
@@ -79,7 +79,7 @@
       "open_issues": 3,
       "open_prs": 3,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 8
     },
     "digital_casting_system": {
       "staleness": "stale",
@@ -95,7 +95,7 @@
       "open_issues": 0,
       "open_prs": 4,
       "compas_major_floor": 2,
-      "features_adopted": 4
+      "features_adopted": 7
     },
     "compas_timber": {
       "staleness": "fresh",
@@ -103,7 +103,7 @@
       "open_issues": 70,
       "open_prs": 17,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 8
     },
     "compas_timber_pb": {
       "staleness": "unknown",
@@ -151,7 +151,7 @@
       "open_issues": 4,
       "open_prs": 1,
       "compas_major_floor": 2,
-      "features_adopted": 5
+      "features_adopted": 3
     },
     "compas_libigl": {
       "staleness": "stale",
@@ -159,7 +159,7 @@
       "open_issues": 1,
       "open_prs": 1,
       "compas_major_floor": 2,
-      "features_adopted": 5
+      "features_adopted": 3
     },
     "compas_manifold": {
       "staleness": "fresh",
@@ -263,7 +263,7 @@
       "open_issues": 5,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 3
+      "features_adopted": 5
     },
     "compas_assembly": {
       "staleness": "dormant",
@@ -311,7 +311,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 3
+      "features_adopted": 5
     },
     "compas_fd": {
       "staleness": "dormant",
@@ -319,7 +319,7 @@
       "open_issues": 2,
       "open_prs": 5,
       "compas_major_floor": null,
-      "features_adopted": 2
+      "features_adopted": 4
     },
     "compas_lmgc90": {
       "staleness": "fresh",
@@ -343,7 +343,7 @@
       "open_issues": 2,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 1
+      "features_adopted": 2
     },
     "compas_tna": {
       "staleness": "stale",
@@ -351,7 +351,7 @@
       "open_issues": 4,
       "open_prs": 1,
       "compas_major_floor": null,
-      "features_adopted": 5
+      "features_adopted": 6
     },
     "compas_tno": {
       "staleness": "aging",
@@ -359,7 +359,7 @@
       "open_issues": 3,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 3
+      "features_adopted": 5
     },
     "jax_fdm": {
       "staleness": "fresh",
@@ -383,7 +383,7 @@
       "open_issues": 13,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 3
     },
     "compas_notebook": {
       "staleness": "stale",
@@ -391,7 +391,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 5
+      "features_adopted": 4
     },
     "compas_plotter": {
       "staleness": "fresh",
@@ -399,7 +399,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 7
+      "features_adopted": 4
     },
     "compas_threejs": {
       "staleness": "fresh",
@@ -423,7 +423,7 @@
       "open_issues": 44,
       "open_prs": 9,
       "compas_major_floor": 2,
-      "features_adopted": 7
+      "features_adopted": 4
     },
     "compas_xr": {
       "staleness": "aging",
@@ -431,7 +431,7 @@
       "open_issues": 2,
       "open_prs": 0,
       "compas_major_floor": 2,
-      "features_adopted": 6
+      "features_adopted": 7
     },
     "aixd_ara": {
       "staleness": "stale",
@@ -463,7 +463,7 @@
       "open_issues": 1,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 3
+      "features_adopted": 4
     },
     "compas_pb": {
       "staleness": "fresh",
@@ -471,7 +471,7 @@
       "open_issues": 11,
       "open_prs": 2,
       "compas_major_floor": 2,
-      "features_adopted": 8
+      "features_adopted": 9
     },
     "compas_rui": {
       "staleness": "stale",
@@ -479,7 +479,7 @@
       "open_issues": 0,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 3
+      "features_adopted": 4
     },
     "compas_session": {
       "staleness": "stale",
@@ -511,7 +511,7 @@
       "open_issues": 6,
       "open_prs": 0,
       "compas_major_floor": null,
-      "features_adopted": 0
+      "features_adopted": 2
     }
   }
 }
