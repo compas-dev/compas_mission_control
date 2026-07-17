@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T06:36:21Z",
+  "generated_at": "2026-07-17T06:31:10Z",
   "features": [
     {
       "id": "compas2",
@@ -84,7 +84,7 @@
         "ci": "passing",
         "open_issues": 100,
         "open_prs": 19,
-        "oldest_open_issue_age_days": 2920
+        "oldest_open_issue_age_days": 2921
       },
       "release": {
         "github_tag": "2.15.1",
@@ -287,7 +287,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 21
+        "oldest_open_issue_age_days": 22
       },
       "release": {
         "github_tag": "0.4.1",
@@ -485,7 +485,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 330
+        "oldest_open_issue_age_days": 331
       },
       "release": {
         "github_tag": "2.3.0",
@@ -546,9 +546,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -583,7 +583,7 @@
         "ci": "passing",
         "open_issues": 74,
         "open_prs": 5,
-        "oldest_open_issue_age_days": 3150
+        "oldest_open_issue_age_days": 3151
       },
       "release": {
         "github_tag": "2.0.1",
@@ -643,9 +643,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -782,7 +782,7 @@
         "ci": "passing",
         "open_issues": 5,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 880
+        "oldest_open_issue_age_days": 881
       },
       "release": {
         "github_tag": "1.0.1",
@@ -881,7 +881,7 @@
         "ci": "none",
         "open_issues": 13,
         "open_prs": 2,
-        "oldest_open_issue_age_days": 2018
+        "oldest_open_issue_age_days": 2019
       },
       "release": {
         "github_tag": "2.0.0",
@@ -932,9 +932,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -979,7 +979,7 @@
         "ci": "passing",
         "open_issues": 3,
         "open_prs": 3,
-        "oldest_open_issue_age_days": 434
+        "oldest_open_issue_age_days": 435
       },
       "release": {
         "github_tag": "0.8.0",
@@ -1032,9 +1032,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "adopted",
@@ -1080,7 +1080,7 @@
         "ci": "passing",
         "open_issues": 3,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 319
+        "oldest_open_issue_age_days": 320
       },
       "release": {
         "github_tag": "0.1.5",
@@ -1173,11 +1173,11 @@
       "stars": 5,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-15",
+        "last_commit_date": "2026-07-16",
         "staleness": "fresh",
         "ci": "passing",
         "open_issues": 0,
-        "open_prs": 4,
+        "open_prs": 5,
         "oldest_open_issue_age_days": null
       },
       "release": {
@@ -1224,9 +1224,9 @@
           "detail": "support: 3.12, 3.13, 3.14"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -1272,12 +1272,12 @@
       "stars": 41,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-15",
+        "last_commit_date": "2026-07-16",
         "staleness": "fresh",
         "ci": "passing",
-        "open_issues": 65,
-        "open_prs": 19,
-        "oldest_open_issue_age_days": 911
+        "open_issues": 63,
+        "open_prs": 15,
+        "oldest_open_issue_age_days": 912
       },
       "release": {
         "github_tag": "2.2.0",
@@ -1323,14 +1323,14 @@
           "detail": "support: 3.9, 3.12, 3.14"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "adopted",
@@ -1338,9 +1338,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -1464,12 +1464,12 @@
       "stars": 2,
       "language": "Python",
       "health": {
-        "last_commit_date": "2026-07-14",
+        "last_commit_date": "2026-07-16",
         "staleness": "fresh",
         "ci": "passing",
         "open_issues": 3,
         "open_prs": 5,
-        "oldest_open_issue_age_days": 47
+        "oldest_open_issue_age_days": 48
       },
       "release": {
         "github_tag": "0.3.1",
@@ -1862,7 +1862,7 @@
         "ci": "passing",
         "open_issues": 4,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 843
+        "oldest_open_issue_age_days": 844
       },
       "release": {
         "github_tag": "2.1.0",
@@ -1960,7 +1960,7 @@
         "ci": "failing",
         "open_issues": 1,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 367
+        "oldest_open_issue_age_days": 368
       },
       "release": {
         "github_tag": "0.7.6",
@@ -2152,7 +2152,7 @@
         "ci": "failing",
         "open_issues": 15,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 2151
+        "oldest_open_issue_age_days": 2152
       },
       "release": {
         "github_tag": null,
@@ -2250,7 +2250,7 @@
         "ci": "passing",
         "open_issues": 5,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1681
+        "oldest_open_issue_age_days": 1682
       },
       "release": {
         "github_tag": "1.5.0",
@@ -2311,9 +2311,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "not-adopted",
@@ -2595,9 +2595,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -2605,9 +2605,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -2740,7 +2740,7 @@
         "ci": "passing",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1156
+        "oldest_open_issue_age_days": 1157
       },
       "release": {
         "github_tag": "0.15.3",
@@ -2789,9 +2789,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -2840,7 +2840,7 @@
         "ci": "none",
         "open_issues": 1,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1321
+        "oldest_open_issue_age_days": 1322
       },
       "release": {
         "github_tag": "0.2.1",
@@ -2940,7 +2940,7 @@
         "ci": "passing",
         "open_issues": 16,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 483
+        "oldest_open_issue_age_days": 484
       },
       "release": {
         "github_tag": "0.3.0",
@@ -3046,7 +3046,7 @@
         "ci": "failing",
         "open_issues": 14,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 531
+        "oldest_open_issue_age_days": 532
       },
       "release": {
         "github_tag": "0.9.5",
@@ -3150,7 +3150,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1752
+        "oldest_open_issue_age_days": 1753
       },
       "release": {
         "github_tag": "0.6.0",
@@ -3203,9 +3203,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -3251,7 +3251,7 @@
         "ci": "none",
         "open_issues": 5,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1792
+        "oldest_open_issue_age_days": 1793
       },
       "release": {
         "github_tag": "1.3.3",
@@ -3350,7 +3350,7 @@
         "ci": "none",
         "open_issues": 4,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 2554
+        "oldest_open_issue_age_days": 2555
       },
       "release": {
         "github_tag": "0.7.1",
@@ -3547,7 +3547,7 @@
         "ci": "failing",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 2106
+        "oldest_open_issue_age_days": 2107
       },
       "release": {
         "github_tag": "0.8.6",
@@ -3643,7 +3643,7 @@
         "ci": "passing",
         "open_issues": 2,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 632
+        "oldest_open_issue_age_days": 633
       },
       "release": {
         "github_tag": "0.5.0",
@@ -3740,7 +3740,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 2,
-        "oldest_open_issue_age_days": 76
+        "oldest_open_issue_age_days": 77
       },
       "release": {
         "github_tag": "0.5.0",
@@ -3939,7 +3939,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 5,
-        "oldest_open_issue_age_days": 876
+        "oldest_open_issue_age_days": 877
       },
       "release": {
         "github_tag": "0.5.4",
@@ -4138,7 +4138,7 @@
         "ci": "passing",
         "open_issues": 6,
         "open_prs": 2,
-        "oldest_open_issue_age_days": 869
+        "oldest_open_issue_age_days": 870
       },
       "release": {
         "github_tag": "0.9.3",
@@ -4238,7 +4238,7 @@
         "ci": "none",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 2715
+        "oldest_open_issue_age_days": 2716
       },
       "release": {
         "github_tag": "0.1.2rc0",
@@ -4337,7 +4337,7 @@
         "ci": "passing",
         "open_issues": 4,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 2409
+        "oldest_open_issue_age_days": 2410
       },
       "release": {
         "github_tag": "0.7.0",
@@ -4433,11 +4433,11 @@
       "language": "Python",
       "health": {
         "last_commit_date": "2026-03-19",
-        "staleness": "aging",
+        "staleness": "stale",
         "ci": "failing",
         "open_issues": 3,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1150
+        "oldest_open_issue_age_days": 1151
       },
       "release": {
         "github_tag": "0.3.0",
@@ -4541,10 +4541,10 @@
         "oldest_open_issue_age_days": null
       },
       "release": {
-        "github_tag": "0.12.0",
-        "github_date": "2026-07-13",
-        "pypi_version": "0.12.0",
-        "pypi_date": "2026-07-13",
+        "github_tag": "0.13.0",
+        "github_date": "2026-07-16",
+        "pypi_version": "0.13.0",
+        "pypi_date": "2026-07-16",
         "drift": false
       },
       "packaging": {
@@ -4582,9 +4582,9 @@
           "detail": "support: 3.10"
         },
         "new-scene-api": {
-          "status": "not-adopted",
+          "status": "adopted",
           "source": "auto",
-          "detail": "no match"
+          "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
           "status": "not-adopted",
@@ -4604,7 +4604,7 @@
         "pypi-match": {
           "status": "adopted",
           "source": "auto",
-          "detail": "PyPI 0.12.0 = GitHub 0.12.0"
+          "detail": "PyPI 0.13.0 = GitHub 0.13.0"
         },
         "conda-forge": {
           "status": "not-adopted",
@@ -4634,7 +4634,7 @@
         "ci": "none",
         "open_issues": 46,
         "open_prs": 1,
-        "oldest_open_issue_age_days": 3149
+        "oldest_open_issue_age_days": 3150
       },
       "release": {
         "github_tag": "0.3.3",
@@ -4733,7 +4733,7 @@
         "ci": "failing",
         "open_issues": 13,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 2229
+        "oldest_open_issue_age_days": 2230
       },
       "release": {
         "github_tag": "0.2.1",
@@ -4991,9 +4991,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'compas_invocations2'"
         },
         "pypi-match": {
           "status": "adopted",
@@ -5128,7 +5128,7 @@
         "ci": "none",
         "open_issues": 29,
         "open_prs": 4,
-        "oldest_open_issue_age_days": 2004
+        "oldest_open_issue_age_days": 2005
       },
       "release": {
         "github_tag": "0.11.0",
@@ -5174,9 +5174,9 @@
           "detail": "support: 3.8, 3.9, 3.10"
         },
         "new-scene-api": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "no match"
+          "detail": "code search failed"
         },
         "no-deprecated-artist": {
           "status": "adopted",
@@ -5224,7 +5224,7 @@
         "ci": "failing",
         "open_issues": 44,
         "open_prs": 9,
-        "oldest_open_issue_age_days": 919
+        "oldest_open_issue_age_days": 920
       },
       "release": {
         "github_tag": "2.0.2",
@@ -5275,9 +5275,9 @@
           "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -5285,9 +5285,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -5322,7 +5322,7 @@
         "ci": "passing",
         "open_issues": 2,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 752
+        "oldest_open_issue_age_days": 753
       },
       "release": {
         "github_tag": "1.0.0",
@@ -5369,9 +5369,9 @@
           "detail": "support: 3.9, 3.10, 3.11, 3.12"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "not-adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "no match"
         },
         "no-deprecated-artist": {
           "status": "unknown",
@@ -5384,9 +5384,9 @@
           "detail": "has mkdocs.yml; no docs/conf.py, docs/source/conf.py"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -5425,7 +5425,7 @@
         "ci": "passing",
         "open_issues": 12,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 819
+        "oldest_open_issue_age_days": 820
       },
       "release": {
         "github_tag": "0.10.6",
@@ -5713,7 +5713,7 @@
         "ci": "passing",
         "open_issues": 1,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 602
+        "oldest_open_issue_age_days": 603
       },
       "release": {
         "github_tag": "1.1.2",
@@ -5808,7 +5808,7 @@
         "ci": "passing",
         "open_issues": 11,
         "open_prs": 2,
-        "oldest_open_issue_age_days": 405
+        "oldest_open_issue_age_days": 406
       },
       "release": {
         "github_tag": "0.5.0",
@@ -5861,9 +5861,9 @@
           "detail": "no match"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "adopted",
@@ -5952,14 +5952,14 @@
           "detail": "support: 3.9"
         },
         "new-scene-api": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
-          "status": "unknown",
+          "status": "adopted",
           "source": "auto",
-          "detail": "code search failed"
+          "detail": "clean"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -6054,9 +6054,9 @@
           "detail": "matched 'from compas.scene import Scene'"
         },
         "no-deprecated-artist": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "clean"
+          "detail": "code search failed"
         },
         "mkdocs": {
           "status": "not-adopted",
@@ -6064,9 +6064,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "matched 'compas_invocations2'"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -6093,7 +6093,7 @@
       "role": null,
       "status": "active",
       "description": "LAmbda MCP: teach your LLM to do Grasshopper tricks",
-      "stars": 16,
+      "stars": 17,
       "language": "Python",
       "health": {
         "last_commit_date": "2026-06-12",
@@ -6163,9 +6163,9 @@
           "detail": "missing mkdocs.yml"
         },
         "invocations2": {
-          "status": "not-adopted",
+          "status": "unknown",
           "source": "auto",
-          "detail": "no match"
+          "detail": "code search failed"
         },
         "pypi-match": {
           "status": "adopted",
@@ -6296,7 +6296,7 @@
         "ci": "none",
         "open_issues": 6,
         "open_prs": 0,
-        "oldest_open_issue_age_days": 1876
+        "oldest_open_issue_age_days": 1877
       },
       "release": {
         "github_tag": null,
@@ -6377,26 +6377,25 @@
     "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas_fab&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_fab&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_fab&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_slicer&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_eve&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas_xr&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_xr&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_xr&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-rrc%2Fcompas_rrc&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-rrc%2Fcompas_rrc&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_occ&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_plotter&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas_skeleton&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Ablockresearchgroup%2Fcompas_rui&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas_rui&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Agramaziokohler%2Fcompas_timber&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Agramaziokohler%2Fcompas_timber&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Agramaziokohler%2Fcompas_timber&per_page=1 -> HTTP 429",
-    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Agramaziokohler%2Fcompas_cadwork&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Acompas-dev%2Fcompas_viewer&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Acompas-dev%2Fcompas_viewer&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas_3gs&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Ablockresearchgroup%2Fcompas_skeleton&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas_session&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Ablockresearchgroup%2Fcompas_session&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Agramaziokohler%2Fcompas_pb&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas-switcher+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/code?q=%22compas.artists%22+repo%3Ablockresearchgroup%2Fcompas-FoFin&per_page=1 -> HTTP 429",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_timber_pb+is%3Apr+is%3Aopen&per_page=1 -> HTTP 422",
     "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_timber_pb+is%3Aissue+is%3Aopen&per_page=1 -> HTTP 422",
-    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_timber_pb+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422"
+    "GET https://api.github.com/search/issues?q=repo%3Agramaziokohler%2Fcompas_timber_pb+is%3Aissue+is%3Aopen&sort=created&order=asc&per_page=1 -> HTTP 422",
+    "GET https://api.github.com/search/code?q=%22compas_invocations2%22+repo%3Agramaziokohler%2Flamcp&per_page=1 -> HTTP 429",
+    "GET https://api.github.com/search/code?q=%22from+compas.scene+import+Scene%22+repo%3Acompas-dev%2Fcompas_view2&per_page=1 -> HTTP 429"
   ]
 }
